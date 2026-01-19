@@ -1,1 +1,383 @@
-@charset "UTF-8";
+/* ==========================================
+   1. 基本設定・リセット
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', 'Poppins', Meiryo, メイリオ, sans-serif;
+    background: linear-gradient(to bottom, #a8e6e3 0%, #fff9e6 100%);
+    position: relative;
+    overflow-x: hidden;
+    color: #333;
+}
+
+/* 桜の花びら風背景 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 192, 203, 0.3) 2px, transparent 2px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ==========================================
+   2. ヘッダー・ナビゲーション
+   ========================================== */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1200;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    color: #ff6b35;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.logo-text span {
+    display: block;
+    font-size: 16px;
+}
+
+/* デスクトップ用ナビ（スマホ時は非表示） */
+.desktop-nav {
+    display: none;
+}
+
+/* ==========================================
+   3. ハンバーガーボタン (menu-btn)
+   ========================================== */
+.menu-btn {
+    display: block;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1100; /* 最前面 */
+    transition: all 0.3s;
+}
+
+.menu-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #00bcd4; /* 通常時は水色 */
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+}
+
+/* 三本線の位置 */
+.menu-btn span:nth-child(1) { top: 0; }
+.menu-btn span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.menu-btn span:nth-child(3) { bottom: 0; }
+
+/* 開いている時 (active) のスタイル 
+   ×印のアニメーション
+*/
+.menu-btn.active span {
+    background: #ff6b35; /* 閉じる時はオレンジ色に */
+}
+
+.menu-btn.active span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+}
+
+/* ×ボタンの下にCLOSEの文字を表示 */
+.menu-btn.active::after {
+    content: 'CLOSE';
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    font-weight: bold;
+    color: #ff6b35;
+}
+
+/* ==========================================
+   4. スマホ用メニュー (Overlay)
+   ========================================== */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 1050;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%); /* 最初は右側に隠す */
+    transition: transform 0.4s ease;
+}
+
+.mobile-nav-overlay.active {
+    transform: translateX(0); /* 出現 */
+}
+
+.mobile-nav-overlay ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-nav-overlay ul li {
+    margin: 25px 0;
+}
+
+.mobile-nav-overlay ul li a {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+/* ==========================================
+   5. メインコンテンツ・セクション
+   ========================================== */
+main {
+    margin-top: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    max-width: 580px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-img {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+}
+
+.festival-title {
+    color: #ff6b35;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.festival-time {
+    color: #00bcd4;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.festival-location {
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* セクション共通カードスタイル */
+.section {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    color: #00bcd4;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ニュース一覧 */
+.news-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.news-item:hover { background: #f5f5f5; }
+
+.news-date { font-size: 12px; color: #666; margin-bottom: 5px; }
+.news-title { font-size: 14px; }
+.news-arrow { color: #ff6b35; font-size: 20px; }
+
+/* アーティストグリッド */
+.artist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.artist-card { text-align: center; }
+.artist-img {
+    width: 100%;
+    height: 120px;
+    background: #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.artist-name { font-size: 13px; }
+
+/* ボタン類 */
+.view-more-btn {
+    display: block;
+    width: 150px;
+    margin: 20px auto 0;
+    padding: 10px;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.view-more-btn:hover { background: #333; color: white; }
+
+.ticket-btn {
+    display: block;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ff6b35;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.ticket-btn:hover { opacity: 0.9; }
+
+/* ==========================================
+   6. フッター
+   ========================================== */
+footer {
+    background: #000;
+    color: white;
+    padding: 30px 20px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 580px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-links { line-height: 2; }
+.footer-links a { color: white; text-decoration: none; font-size: 14px; }
+.footer-map { width: 150px; height: 100px; background: #ddd; }
+.footer-bottom { text-align: center; margin-top: 20px; font-size: 12px; }
+
+/* ==========================================
+   7. レスポンシブ対応 (Media Queries)
+   ========================================== */
+
+/* タブレット用 (768px以上) */
+@media (min-width: 768px) {
+    .container, .footer-content { max-width: 720px; }
+    .artist-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* PC用 (1280px以上) */
+@media (min-width: 1280px) {
+    body { overflow: hidden; } /* PCでは全体スクロールを抑制（コンテナ内スクロール） */
+    
+    header { position: relative; }
+    .menu-btn, .mobile-nav-overlay { display: none; } /* ハンバーガー関連を隠す */
+    
+    .desktop-nav {
+        display: flex;
+        gap: 30px;
+    }
+    
+    .desktop-nav a {
+        color: #333;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s;
+    }
+    
+    .desktop-nav a:hover { color: #00bcd4; }
+    
+    main {
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: calc(100vh - 70px);
+        padding-top: 20px;
+    }
+
+    .container {
+        max-width: 580px;
+        height: calc(100vh - 150px);
+        overflow-y: auto;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+    }
+
+    /* カスタムスクロールバー（PCのみ） */
+    .container::-webkit-scrollbar { width: 8px; }
+    .container::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.3); }
+    .container::-webkit-scrollbar-thumb { background: rgba(0, 188, 212, 0.5); border-radius: 4px; }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+    }
+    .footer-content { max-width: 1280px; }
+}
