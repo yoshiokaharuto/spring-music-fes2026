@@ -1,0 +1,209 @@
+/* ==========================================
+   共通設定（header/footerで必要な基本ルール）
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   header（ヘッダー・ナビゲーション）
+   ========================================== */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1200; /* メニューより手前に */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    color: #ff6b35;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.logo-text span {
+    display: block;
+    font-size: 16px;
+}
+
+/* デスクトップ用ナビ（PC時のみ表示） */
+.desktop-nav {
+    display: none;
+}
+
+.desktop-nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.desktop-nav a:hover {
+    color: #00bcd4;
+}
+
+/* ==========================================
+   ハンバーガーボタン (menu-btn)
+   ========================================== */
+.menu-btn {
+    display: block;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1300;
+}
+
+.menu-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #00bcd4;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+}
+
+/* 通常時の三本線の位置 */
+.menu-btn span:nth-child(1) { top: 0; }
+.menu-btn span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.menu-btn span:nth-child(3) { bottom: 0; }
+
+/* 開いている時 (active) の×アニメーション */
+.menu-btn.active span { background: #ff6b35; }
+
+.menu-btn.active span:nth-child(1) {
+    top: 50% !important;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+    top: 50% !important;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.menu-btn.active::after {
+    content: 'CLOSE';
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    font-weight: bold;
+    color: #ff6b35;
+}
+
+/* ==========================================
+   スマホ用メニュー (Overlay)
+   ========================================== */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 1050;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+}
+
+.mobile-nav-overlay.active {
+    transform: translateX(0);
+}
+
+.mobile-nav-overlay ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-nav-overlay ul li {
+    margin: 25px 0;
+}
+
+.mobile-nav-overlay ul li a {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+/* ==========================================
+   footer（フッター）
+   ========================================== */
+footer {
+    background: #000;
+    color: white;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-content {
+    max-width: 580px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-links {
+    line-height: 2;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-map {
+    width: 150px;
+    height: 100px;
+    background: #ddd;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+/* ==========================================
+   PC用レスポンシブ (1280px以上)
+   ========================================== */
+@media (min-width: 1280px) {
+    .menu-btn, .mobile-nav-overlay {
+        display: none;
+    }
+    
+    .desktop-nav {
+        display: flex;
+        gap: 30px;
+    }
+
+    .footer-content {
+        max-width: 1280px;
+    }
+}
