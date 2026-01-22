@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+html{
+    font-family: Noto Sans JP, Poppins, sans-serif;
+}
+
 /* ==========================================
    header（ヘッダー・ナビゲーション）
    ========================================== */
