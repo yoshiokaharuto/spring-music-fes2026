@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>お問い合わせ確認</title>
+    <meta charset="UTF-8">
+    <title>お問い合わせ確認 - Spring Music Festival</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+    <div class="container">
+        <header class="header">
+            <div class="logo">SPRING MUSIC<br>FESTIVAL</div>
+        </header>
+        <h1>内容確認</h1>
+        <p class="instruction">以下の内容で送信しますか？</p>
+        <div class="confirm-area">
+            <div class="form-group">
+                <label>・お問い合わせ内容項目</label>
+                <p id="res-kind" class="confirm-text"></p>
+            </div>
+            <div class="form-group">
+                <label>・お名前</label>
+                <p id="res-name" class="confirm-text"></p>
+            </div>
+            <div class="form-group">
+                <label>・メールアドレス</label>
+                <p id="res-email" class="confirm-text"></p>
+            </div>
+            <div class="form-group">
+                <label>・電話番号</label>
+                <p id="res-tel" class="confirm-text"></p>
+            </div>
+            <div class="form-group">
+                <label>・お問い合わせ内容</label>
+                <p id="res-message" class="confirm-text"></p>
+            </div>
+        </div>
+        <div class="button-container">
+            <button type="button" class="back-btn" onclick="history.back()">修正する</button>
+            <button type="button" class="submit-btn" onclick="alert('送信しました！')">送信する</button>
+        </div>
+    </div>
+    <script>
+        // URLの後ろについているデータ（?name=山田...など）を取得
+        const params = new URLSearchParams(window.location.search);
+        // 各IDの場所に、URLから取ったデータを流し込む
+        document.getElementById('res-kind').innerText = params.get('kind');
+        document.getElementById('res-name').innerText = params.get('name');
+        document.getElementById('res-email').innerText = params.get('email');
+        document.getElementById('res-tel').innerText = params.get('tel') || '（未入力）';
+        document.getElementById('res-message').innerText = params.get('message');
+    </script>
 </body>
 </html>
