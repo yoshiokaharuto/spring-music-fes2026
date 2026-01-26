@@ -3,9 +3,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>出演者一覧</title>
+  <title>アーティスト一覧</title>
 </head>
 <body>
-  
+  <header>
+        <div class="header-content">
+            <div class="logo-text">
+                <span>SPRING MUSIC</span><br>
+                <span>FESTIVAL 2026</span>
+            </div>
+            <nav class="desktop-nav">
+                <a href="#artist">アーティスト</a>
+                <a href="#timetable">タイムテーブル</a>
+                <a href="#venue">会場案内</a>
+                <a href="#goods">グッズ</a>
+                <a href="#ticket">チケット情報</a>
+                <a href="#contact">お問い合わせ</a>
+            </nav>
+            <div class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+  </header>
+
+  <nav class="mobile-nav-overlay" id="mobileNav">
+        <ul>
+            <li><a href="#artist">アーティスト</a></li>
+            <li><a href="#timetable">タイムテーブル</a></li>
+            <li><a href="#venue">会場案内</a></li>
+            <li><a href="#goods">グッズ</a></li>
+            <li><a href="#ticket">チケット情報</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+    </nav>
+
+  <main>
+    <div class="container">
+        <div class="title-section">
+            <h1>ARTIST</h1>
+            <p>アーティスト</p>
+        </div>
+
+        <div style="text-align: center;">
+            <div class="date-badge">5.2 sat</div>
+        </div>
+
+        <div class="artist-grid">
+            <div class="artist-card">
+                <a href="c.html">
+                  <img class="artist-image" src="./img/TheBlossomDrive.webp" alt="">
+                  <div class="artist-info">TheBlossomDrive</div>
+                </a>
+            </div>
+            <div class="artist-card">
+                <img class="artist-image" src="./img/TheBlossomDrive.webp" alt="">
+                <div class="artist-info">TheBlossomDrive</div>
+            </div>
+            <div class="artist-card">
+                <img class="artist-image" src="./img/TheBlossomDrive.webp" alt="">
+                <div class="artist-info">TheBlossomDrive</div>
+            </div>
+            <div class="artist-card">
+                <img class="artist-image" src="./img/TheBlossomDrive.webp" alt="">
+                <div class="artist-info">TheBlossomDrive</div>
+            </div>
+            <div class="artist-card">
+                <img class="artist-image" src="./img/TheBlossomDrive.webp" alt="">
+                <div class="artist-info">TheBlossomDrive</div>
+            </div>
+            <div class="artist-card">
+                <img class="artist-image" src="./img/TheBlossomDrive.webp" alt="">
+                <div class="artist-info">TheBlossomDrive</div>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <div class="date-badge">5.3 sun</div>
+        </div>
+
+        <div class="artist-grid">
+            <div class="artist-card">
+                <img class="artist-image" src="./img/TheBlossomDrive.webp" alt="">
+                <div class="artist-info">TheBlossomDrive</div>
+            </div>
+            <div class="artist-card">
+                <img class="artist-image" src="./img/TheBlossomDrive.webp" alt="">
+                <div class="artist-info">TheBlossomDrive</div>
+            </div>
+            <div class="artist-card">
+                <img class="artist-image" src="./img/TheBlossomDrive.webp" alt="">
+                <div class="artist-info">TheBlossomDrive</div>
+            </div>
+            <div class="artist-card">
+                <img class="artist-image" src="./img/TheBlossomDrive.webp" alt="">
+                <div class="artist-info">TheBlossomDrive</div>
+            </div>
+            <div class="artist-card">
+                <img class="artist-image" src="./img/TheBlossomDrive.webp" alt="">
+                <div class="artist-info">TheBlossomDrive</div>
+            </div>
+            <div class="artist-card">
+                <img class="artist-image" src="./img/TheBlossomDrive.webp" alt="">
+                <div class="artist-info">TheBlossomDrive</div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#home">HOME</a><br>
+                    <a href="#privacy">プライバシーポリシー</a><br>
+                    <a href="#contact">お問い合わせ</a>
+                </div>
+                <div>
+                    <div style="font-size: 14px; margin-bottom: 10px;">Map</div>
+                    <div class="footer-map"></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                SPRING MUSIC FESTIVAL
+            </div>
+        </footer>
+    </div>
+
+
+  </main>
+
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const navLinks = document.querySelectorAll('.mobile-nav-overlay a');
+
+    // メニューの開閉を切り替える関数
+    function toggleMenu() {
+        menuBtn.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        
+        // メニューが開いている時は背面をスクロールさせない
+        if (mobileNav.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+
+    // ボタンクリック
+    menuBtn.addEventListener('click', toggleMenu);
+
+    // リンクをクリックしたら閉じる
+    navLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+
+    // ★追加：メニューの背景（画面全体）をクリックしても閉じるようにする
+    mobileNav.addEventListener('click', (e) => {
+        if (e.target === mobileNav) { // 背景部分をタップした時だけ
+            toggleMenu();
+        }
+    });
+</script>
 </body>
 </html>
