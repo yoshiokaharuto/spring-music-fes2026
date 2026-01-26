@@ -6,6 +6,108 @@
   <title>タイムテーブル</title>
 </head>
 <body>
-  
+  <header>
+        <div class="header-content">
+            <div class="logo-text">
+                <span>SPRING MUSIC</span><br>
+                <span>FESTIVAL 2026</span>
+            </div>
+            <nav class="desktop-nav">
+                <a href="#artist">アーティスト</a>
+                <a href="#timetable">タイムテーブル</a>
+                <a href="#venue">会場案内</a>
+                <a href="#goods">グッズ</a>
+                <a href="#ticket">チケット情報</a>
+                <a href="#contact">お問い合わせ</a>
+            </nav>
+            <div class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+  </header>
+
+  <nav class="mobile-nav-overlay" id="mobileNav">
+    <ul>
+        <li><a href="#artist">アーティスト</a></li>
+        <li><a href="#timetable">タイムテーブル</a></li>
+        <li><a href="#venue">会場案内</a></li>
+        <li><a href="#goods">グッズ</a></li>
+        <li><a href="#ticket">チケット情報</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+    </ul>
+  </nav>
+
+  <main>
+      <section id="timetable" class="timetable-section">
+        <div class="title-section">
+          <h1>TIME TABLE</h1>
+          <p>タイムテーブル</p>
+        </div>
+        
+        <div class="timetable-container">
+          <img src="./img/0502_timetable.png" alt="05/02 タイムテーブル" class="timetable-img">
+        </div>
+
+        <div class="timetable-notes">
+          <p>・出演アーティスト及び出演日程・タイムテーブルが変更となる場合がございます。</p>
+          <p>・出演者の変更・キャンセルに伴う払い戻しは行いませんので予めご了承下さい。</p>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#home">HOME</a><br>
+                <a href="#privacy">プライバシーポリシー</a><br>
+                <a href="#contact">お問い合わせ</a>
+            </div>
+            <div>
+                <div style="font-size: 14px; margin-bottom: 10px;">Map</div>
+                <div class="footer-map"></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            SPRING MUSIC FESTIVAL
+        </div>
+      </footer>
+    </div>
+  </main>
+
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const navLinks = document.querySelectorAll('.mobile-nav-overlay a');
+
+    // メニューの開閉を切り替える関数
+    function toggleMenu() {
+        menuBtn.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        
+        // メニューが開いている時は背面をスクロールさせない
+        if (mobileNav.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+
+    // ボタンクリック
+    menuBtn.addEventListener('click', toggleMenu);
+
+    // リンクをクリックしたら閉じる
+    navLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+
+    // ★追加：メニューの背景（画面全体）をクリックしても閉じるようにする
+    mobileNav.addEventListener('click', (e) => {
+        if (e.target === mobileNav) { // 背景部分をタップした時だけ
+            toggleMenu();
+        }
+    });
+</script>
 </body>
 </html>
