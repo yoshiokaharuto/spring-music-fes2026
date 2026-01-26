@@ -41,3 +41,8 @@
     min-height: 60px;
     background: white;
 }
+
+.artist-link {
+    text-decoration: none;
+    color: inherit;
+}
