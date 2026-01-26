@@ -1,13 +1,4 @@
-body {
-    background: linear-gradient(to bottom, #d4f1f4 0%, #b8e6e8 100%);
-}
-
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    /* 80px 以上の margin-top を追加してヘッダーを避ける */
-    padding: 100px 20px 40px 20px; 
-}
+@charset "UTF-8";
 
 .artist-image {
     width: 100%;
@@ -29,28 +20,24 @@ h1 {
     margin-bottom: 30px;
     color: #333;
     font-size: 0.95rem;
-    font-weight: bold;
 }
 
 .genre {
     margin-bottom: 25px;
     color: #333;
     font-size: 0.95rem;
-    font-weight: bold;
 }
 
 .schedule {
     margin-bottom: 25px;
     color: #333;
     font-size: 0.95rem;
-    font-weight: bold;
 }
 
 .stage {
     margin-bottom: 25px;
     color: #333;
     font-size: 0.95rem;
-    font-weight: bold;
 }
 
 .songs {
@@ -58,7 +45,7 @@ h1 {
 }
 
 .songs h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 15px;
     color: #333;
 }
@@ -70,8 +57,7 @@ h1 {
 .songs li {
     margin-bottom: 8px;
     color: #333;
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 0.95rem;
 }
 
 .songs li::before {
@@ -89,7 +75,6 @@ h1 {
     display: inline-block;
     width: 50px;
     height: 50px;
-    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,10 +91,10 @@ h1 {
     display: inline-block;
     background-color: #ff9966;
     color: #fff;
-    padding: 15px 45px;
+    padding: 15px 60px;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
     transition: opacity 0.3s;
 }
 
@@ -121,10 +106,10 @@ h1 {
     text-align: center;
 }
 
-
-.icon-x img{
-    width: 30px;
-    height: 30px;
+.icon-x{
+    width: 24px;
+    height: 24px;
+    fill: #fff;
 }
 
 @media (min-width: 1280px) {
