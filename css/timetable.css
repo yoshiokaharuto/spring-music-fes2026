@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+.timetable-section {
+    padding: 40px 0;
+}
+
+/* 画像を囲む枠。スマホで画像がはみ出す場合に横スクロールさせる */
+.timetable-container {
+    width: 100%;
+    overflow-x: auto; /* 横スクロールを許可 */
+    -webkit-overflow-scrolling: touch;
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.timetable-img {
+    display: block;
+    width: 100%;       /* 基本は幅いっぱい */
+    min-width: 500px;  /* でも、細かすぎて読めなくなるのを防ぐため最小幅を設定 */
+    height: auto;
+    margin: 0 auto;
+}
+
+.timetable-notes {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.6;
+    padding: 0 10px;
+}
+
+/* PC（1280px以上）の調整 */
+@media (min-width: 1280px) {
+    .timetable-img {
+        max-width: 600px; /* PCでは大きくなりすぎないように制限 */
+    }
+}
