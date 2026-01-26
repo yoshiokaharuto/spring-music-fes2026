@@ -3,9 +3,191 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>出演者一覧</title>
+  <title>アーティスト一覧</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/artist-list.css">
 </head>
 <body>
-  
+  <header>
+        <div class="header-content">
+            <div class="logo-text">
+                <span>SPRING MUSIC</span><br>
+                <span>FESTIVAL 2026</span>
+            </div>
+            <nav class="desktop-nav">
+                <a href="#artist">アーティスト</a>
+                <a href="#timetable">タイムテーブル</a>
+                <a href="#venue">会場案内</a>
+                <a href="#goods">グッズ</a>
+                <a href="#ticket">チケット情報</a>
+                <a href="#contact">お問い合わせ</a>
+            </nav>
+            <div class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+  </header>
+
+  <nav class="mobile-nav-overlay" id="mobileNav">
+        <ul>
+            <li><a href="#artist">アーティスト</a></li>
+            <li><a href="#timetable">タイムテーブル</a></li>
+            <li><a href="#venue">会場案内</a></li>
+            <li><a href="#goods">グッズ</a></li>
+            <li><a href="#ticket">チケット情報</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+    </nav>
+
+  <main>
+    <div class="container">
+        <div class="title-section">
+            <h1>ARTIST</h1>
+            <p>アーティスト</p>
+        </div>
+
+        <div style="text-align: center;">
+            <div class="date-badge">5.2 sat</div>
+        </div>
+
+        <div class="artist-grid">
+            <div class="artist-card">
+                <a href="./TheBlossomDrive.html" class="artist-link">
+                  <img class="artist-image" src="../images/TheBlossomDrive.webp" alt="">
+                  <div class="artist-info">TheBlossomDrive</div>
+                </a>
+            </div>
+            <div class="artist-card">
+              <a href="./takahashi_rio.html" class="artist-link">
+                <img class="artist-image" src="../images/takahashi_rio.webp" alt="">
+                <div class="artist-info">高橋リオ </div>
+              </a>
+            </div>
+            <div class="artist-card">
+              <a href="./DJ_Breeze.html" class="artist-link">
+                <img class="artist-image" src="../images/DJ_Breeze.webp" alt="">
+                <div class="artist-info">DJ Breeze</div>
+              </a>
+            </div>
+            <div class="artist-card">
+                <a href="./MorningEchoes.html" class="artist-link">
+                  <img class="artist-image" src="../images/MorningEchoes.webp" alt="">
+                  <div class="artist-info">Morning Echoes</div>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="./nakamura_ren.html" class="artist-link">
+                  <img class="artist-image" src="../images/nakamura_ren.webp" alt="">
+                  <div class="artist-info">中村蓮</div>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="./VelvetGroove.html" class="artist-link">
+                  <img class="artist-image" src="../images/VelvetGroove.webp" alt="">
+                  <div class="artist-info">Velvet Groove</div>
+                </a>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <div class="date-badge">5.3 sun</div>
+        </div>
+
+        <div class="artist-grid">
+            <div class="artist-card">
+                <a href="./CrimsonWaves.html" class="artist-link">
+                  <img class="artist-image" src="../images/CrimsonWaves.webp" alt="">
+                  <div class="artist-info">Crimson Waves</div>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="./miyamoto_sakura.html" class="artist-link">
+                  <img class="artist-image" src="../images/miyamoto_sakura.webp" alt="">
+                  <div class="artist-info">宮本サクラ</div>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="./morishita_haruto.html" class="artist-link">
+                  <img class="artist-image" src="../images/morisita_haruto.webp" alt="">
+                  <div class="artist-info">森下晴人 </div>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="./fuga.html" class="artist-link">
+                  <img class="artist-image" src="../images/fuga.webp" alt="">
+                  <div class="artist-info">風雅(ふうが) </div>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="./neon_lights.html" class="artist-link">
+                  <img class="artist-image" src="../images/NeonLights.webp" alt="">
+                  <div class="artist-info">Neon Lights</div>
+                </a>
+            </div>
+            <div class="artist-card">
+                <a href="./horizon_strings.html" class="artist-link">
+                  <img class="artist-image" src="../images/HorizonStrings.webp" alt="">
+                  <div class="artist-info">Horizon Strings</div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#home">HOME</a><br>
+                    <a href="#privacy">プライバシーポリシー</a><br>
+                    <a href="#contact">お問い合わせ</a>
+                </div>
+                <div>
+                    <div style="font-size: 14px; margin-bottom: 10px;">Map</div>
+                    <div class="footer-map"></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                SPRING MUSIC FESTIVAL
+            </div>
+        </footer>
+    </div>
+
+
+  </main>
+
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const navLinks = document.querySelectorAll('.mobile-nav-overlay a');
+
+    // メニューの開閉を切り替える関数
+    function toggleMenu() {
+        menuBtn.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        
+        // メニューが開いている時は背面をスクロールさせない
+        if (mobileNav.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+
+    // ボタンクリック
+    menuBtn.addEventListener('click', toggleMenu);
+
+    // リンクをクリックしたら閉じる
+    navLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+
+    // ★追加：メニューの背景（画面全体）をクリックしても閉じるようにする
+    mobileNav.addEventListener('click', (e) => {
+        if (e.target === mobileNav) { // 背景部分をタップした時だけ
+            toggleMenu();
+        }
+    });
+</script>
 </body>
 </html>
