@@ -1,5 +1,5 @@
 /* ==========================================
-   共通設定（header/footerで必要な基本ルール）
+   1. 基本設定・リセット
    ========================================== */
 * {
     margin: 0;
@@ -7,12 +7,52 @@
     box-sizing: border-box;
 }
 
-html{
-    font-family: Noto Sans JP, Poppins, sans-serif;
+body {
+    font-family: 'Noto Sans JP', 'Poppins', Meiryo, メイリオ, sans-serif;
+    background-image: url(../images/spring_bg.png);
+    position: relative;
+    color: #333;
+}
+
+/* 桜の花びら風背景 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 192, 203, 0.3) 2px, transparent 2px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    max-width: 580px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title-section h1 {
+    font-size: 32px;
+    color: #666;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+}
+
+.title-section p {
+    font-size: 14px;
+    color: #888;
 }
 
 /* ==========================================
-   header（ヘッダー・ナビゲーション）
+   2. ヘッダー・ナビゲーション
    ========================================== */
 header {
     background: rgba(255, 255, 255, 0.95);
@@ -21,7 +61,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1200; /* メニューより手前に */
+    z-index: 1200;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -45,24 +85,13 @@ header {
     font-size: 16px;
 }
 
-/* デスクトップ用ナビ（PC時のみ表示） */
+/* デスクトップ用ナビ（スマホ時は非表示） */
 .desktop-nav {
     display: none;
 }
 
-.desktop-nav a {
-    color: #333;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s;
-}
-
-.desktop-nav a:hover {
-    color: #00bcd4;
-}
-
 /* ==========================================
-   ハンバーガーボタン (menu-btn)
+   3. ハンバーガーボタン (menu-btn)
    ========================================== */
 .menu-btn {
     display: block;
@@ -70,29 +99,34 @@ header {
     height: 25px;
     position: relative;
     cursor: pointer;
-    z-index: 1300;
+    z-index: 1100; /* 最前面 */
+    transition: all 0.3s;
 }
 
 .menu-btn span {
     display: block;
     width: 100%;
     height: 3px;
-    background: #00bcd4;
+    background: #00bcd4; /* 通常時は水色 */
     position: absolute;
     left: 0;
     transition: all 0.3s;
 }
 
-/* 通常時の三本線の位置 */
+/* 三本線の位置 */
 .menu-btn span:nth-child(1) { top: 0; }
 .menu-btn span:nth-child(2) { top: 50%; transform: translateY(-50%); }
 .menu-btn span:nth-child(3) { bottom: 0; }
 
-/* 開いている時 (active) の×アニメーション */
-.menu-btn.active span { background: #ff6b35; }
+/* 開いている時 (active) のスタイル 
+   ×印のアニメーション
+*/
+.menu-btn.active span {
+    background: #ff6b35; /* 閉じる時はオレンジ色に */
+}
 
 .menu-btn.active span:nth-child(1) {
-    top: 50% !important;
+    top: 50%;
     transform: translateY(-50%) rotate(45deg);
 }
 
@@ -101,10 +135,11 @@ header {
 }
 
 .menu-btn.active span:nth-child(3) {
-    top: 50% !important;
-    transform: translateY(-50%) rotate(-45deg);
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
 }
 
+/* ×ボタンの下にCLOSEの文字を表示 */
 .menu-btn.active::after {
     content: 'CLOSE';
     position: absolute;
@@ -117,7 +152,7 @@ header {
 }
 
 /* ==========================================
-   スマホ用メニュー (Overlay)
+   4. スマホ用メニュー (Overlay)
    ========================================== */
 .mobile-nav-overlay {
     position: fixed;
@@ -130,12 +165,12 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateX(100%);
+    transform: translateX(100%); /* 最初は右側に隠す */
     transition: transform 0.4s ease;
 }
 
 .mobile-nav-overlay.active {
-    transform: translateX(0);
+    transform: translateX(0); /* 出現 */
 }
 
 .mobile-nav-overlay ul {
@@ -155,14 +190,24 @@ header {
 }
 
 /* ==========================================
-   footer（フッター）
+   ========================================== */
+
+
+main {
+    margin-top: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ==========================================
+   6. フッター
    ========================================== */
 footer {
     background: #000;
     color: white;
     padding: 30px 20px;
-    position: relative;
-    z-index: 10;
+    margin-top: 50px;
 }
 
 .footer-content {
@@ -172,42 +217,61 @@ footer {
     justify-content: space-between;
 }
 
-.footer-links {
-    line-height: 2;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.footer-map {
-    width: 150px;
-    height: 100px;
-    background: #ddd;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 12px;
-}
+.footer-links { line-height: 2; }
+.footer-links a { color: white; text-decoration: none; font-size: 14px; }
+.footer-map { width: 150px; height: 100px; background: #ddd; }
+.footer-bottom { text-align: center; margin-top: 20px; font-size: 12px; }
 
 /* ==========================================
-   PC用レスポンシブ (1280px以上)
+   7. レスポンシブ対応 (Media Queries)
    ========================================== */
+
+/* タブレット用 (768px以上) */
+@media (min-width: 768px) {
+    .container, .footer-content { max-width: 720px; }
+    .artist-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* PC用 (1280px以上) */
 @media (min-width: 1280px) {
-    .menu-btn, .mobile-nav-overlay {
-        display: none;
-    }
+    body { overflow: hidden; } /* PCでは全体スクロールを抑制（コンテナ内スクロール） */
+    
+    header { position: relative; }
+    .menu-btn, .mobile-nav-overlay { display: none; } /* ハンバーガー関連を隠す */
     
     .desktop-nav {
         display: flex;
         gap: 30px;
     }
-
-    .footer-content {
-        max-width: 1280px;
+    
+    .desktop-nav a {
+        color: #333;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s;
     }
+    
+    .desktop-nav a:hover { color: #00bcd4; }
+    
+    main {
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: calc(100vh - 70px);
+        padding-top: 20px;
+    }
+
+    .container {
+        height: calc(100vh - 150px);
+        overflow-y: auto;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+    }
+
+    /* カスタムスクロールバー（PCのみ） */
+    .container::-webkit-scrollbar { width: 8px; }
+    .container::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.3); }
+    .container::-webkit-scrollbar-thumb { background: rgba(0, 188, 212, 0.5); border-radius: 4px; }
+    .footer-content { max-width: 1280px; }
 }
