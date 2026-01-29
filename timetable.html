@@ -42,38 +42,47 @@
   </nav>
 
   <main>
-      <section id="timetable" class="timetable-section">
+    <div class="container">
         <div class="title-section">
           <h1>TIME TABLE</h1>
           <p>タイムテーブル</p>
         </div>
+
+        <div class="tab-group">
+            <button class="tab-btn active" onclick="switchTab('day1',event)">05.02(sat)</button>
+            <button class="tab-btn" onclick="switchTab('day2',event)">05.03(sun)</button>
+        </div>
         
         <div class="timetable-container">
-          <img src="./img/0502_timetable.png" alt="05/02 タイムテーブル" class="timetable-img">
+            <div id="day1" class="timetable-content">
+                <img src="./images/0502_timetable.png" alt="05/02 タイムテーブル" class="timetable-img">
+            </div>
+            <div id="day2" class="timetable-content" style="display: none;">
+                <img src="./images/0503_timetable.png" alt="05/03 タイムテーブル" class="timetable-img">
+            </div>
         </div>
 
         <div class="timetable-notes">
           <p>・出演アーティスト及び出演日程・タイムテーブルが変更となる場合がございます。</p>
           <p>・出演者の変更・キャンセルに伴う払い戻しは行いませんので予めご了承下さい。</p>
         </div>
-      </section>
 
-      <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#home">HOME</a><br>
-                <a href="#privacy">プライバシーポリシー</a><br>
-                <a href="#contact">お問い合わせ</a>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#home">HOME</a><br>
+                    <a href="#privacy">プライバシーポリシー</a><br>
+                    <a href="#contact">お問い合わせ</a>
+                </div>
+                <div>
+                    <div style="font-size: 14px; margin-bottom: 10px;">Map</div>
+                    <div class="footer-map"></div>
+                </div>
             </div>
-            <div>
-                <div style="font-size: 14px; margin-bottom: 10px;">Map</div>
-                <div class="footer-map"></div>
+            <div class="footer-bottom">
+                SPRING MUSIC FESTIVAL
             </div>
-        </div>
-        <div class="footer-bottom">
-            SPRING MUSIC FESTIVAL
-        </div>
-      </footer>
+        </footer>
     </div>
   </main>
 
@@ -94,6 +103,27 @@
         } else {
             document.body.style.overflow = '';
         }
+    }
+    // タブ切り替え関数
+    function switchTab(tabId, event) {
+        // 1. すべての画像コンテンツを非表示にする
+        const contents = document.querySelectorAll('.timetable-content');
+        contents.forEach(content => {
+            content.style.display = 'none';
+        });
+
+        // 2. クリックされたIDのコンテンツだけ表示する
+        document.getElementById(tabId).style.display = 'block';
+
+        // 3. すべてのボタンから 'active' クラスを外す
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // 4. クリックされたボタンにだけ 'active' クラスをつける
+        // (event.currentTarget はクリックされた要素自身を指します)
+        event.currentTarget.classList.add('active');
     }
 
     // ボタンクリック
