@@ -4,47 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spring Music Festival - お問い合わせ</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/contact.css">
 </head>
 <body>
-    <div>
-        <header>
-            <div class="logo">SPRING MUSIC<br>FESTIVAL</div>
-        </header>
+    <header>
+        <div class="header-content">
+            <div class="logo-text">
+                SPRING MUSIC<br>
+                <span>FESTIVAL 2026</span>
+            </div>
+            <nav class="desktop-nav">
+                <a href="./artists/index.html">アーティスト</a>
+                <a href="./timetable.html">タイムテーブル</a>
+                <a href="./access.html">会場案内</a>
+                <a href="./goods.html">グッズ</a>
+                <a href="./ticket.html">チケット情報</a>
+                <a href="./contact.html">お問い合わせ</a>
+            </nav>
+            <div class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav-overlay" id="mobileNav">
+        <ul>
+            <li><a href="./artists/index.html">アーティスト</a></li>
+            <li><a href="./timetable.html">タイムテーブル</a></li>
+            <li><a href="./access.html">会場案内</a></li>
+            <li><a href="./goods.html">グッズ</a></li>
+            <li><a href="./ticket.html">チケット情報</a></li>
+            <li><a href="./contact.html">お問い合わせ</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
         <h1>お問い合わせ</h1>
         <p>
             お問い合わせ内容を選択の上「確認画面へ」<br>
             ボタンをクリックしてください
         </p>
-        <form action="contact-confirm.html" method="get">
-            <div class="form-group">
-                <label>・お問い合わせ内容項目</label>
-                <select name="kind" class="input-field select-box">
-                    <option value="チケットについて">チケットについて</option>
-                    <option value="公演について">公演について</option>
-                    <option value="その他">その他</option>
-                </select>
+            <form action="contact-confirm.html" method="get">
+                <div class="form-group">
+                    <label>・お問い合わせ内容項目</label>
+                    <select name="kind" class="input-field select-box">
+                        <option value="チケットについて">チケットについて</option>
+                        <option value="公演について">公演について</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>・お名前（必須）</label>
+                    <input type="text" name="name" class="input-field" required placeholder="例：山田 太郎">
+                </div>
+                <div class="form-group">
+                    <label>・メールアドレス（必須）</label>
+                    <input type="email" name="email" class="input-field" required placeholder="例：example@mail.com">
+                </div>
+                <div class="form-group">
+                    <label>・電話番号（任意）</label>
+                    <input type="tel" name="tel" class="input-field" placeholder="例：09012345678">
+                </div>
+                <div class="form-group">
+                    <label>・お問い合わせ内容（必須）</label>
+                    <textarea name="message" class="input-field textarea" required placeholder="ご質問内容を入力してください"></textarea>
+                </div>
+                <div class="button-container">
+                    <button type="submit" class="submit-btn">確認画面へ</button>
+                </div>
+            </form>
+
+            <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="./index.html">HOME</a><br>
+                    <a href="./privacy.html">プライバシーポリシー</a><br>
+                    <a href="./contact.html">お問い合わせ</a>
+                </div>
+                <div>
+                    <div style="font-size: 14px; margin-bottom: 10px;">Map</div>
+                    <div class="footer-map"></div>
+                </div>
             </div>
-            <div class="form-group">
-                <label>・お名前（必須）</label>
-                <input type="text" name="name" class="input-field" required placeholder="例：山田 太郎">
+            <div class="footer-bottom">
+                SPRING MUSIC FESTIVAL
             </div>
-            <div class="form-group">
-                <label>・メールアドレス（必須）</label>
-                <input type="email" name="email" class="input-field" required placeholder="例：example@mail.com">
-            </div>
-            <div class="form-group">
-                <label>・電話番号（任意）</label>
-                <input type="tel" name="tel" class="input-field" placeholder="例：09012345678">
-            </div>
-            <div class="form-group">
-                <label>・お問い合わせ内容（必須）</label>
-                <textarea name="message" class="input-field textarea" required placeholder="ご質問内容を入力してください"></textarea>
-            </div>
-            <div class="button-container">
-                <button type="submit" class="submit-btn">確認画面へ</button>
-            </div>
-        </form>
-    </div>
+        </footer>
+        </div>
+    </main>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const navLinks = document.querySelectorAll('.mobile-nav-overlay a');
+
+    // メニューの開閉を切り替える関数
+    function toggleMenu() {
+        menuBtn.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        
+        // メニューが開いている時は背面をスクロールさせない
+        if (mobileNav.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+
+    // ボタンクリック
+    menuBtn.addEventListener('click', toggleMenu);
+
+    // リンクをクリックしたら閉じる
+    navLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+
+    // ★追加：メニューの背景（画面全体）をクリックしても閉じるようにする
+    mobileNav.addEventListener('click', (e) => {
+        if (e.target === mobileNav) { // 背景部分をタップした時だけ
+            toggleMenu();
+        }
+    });
+</script>
 </body>
 </html>
