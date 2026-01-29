@@ -3,42 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <title>お問い合わせ確認 - Spring Music Festival</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/contact.css">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="logo">SPRING MUSIC<br>FESTIVAL</div>
-        </header>
-        <h1>内容確認</h1>
-        <p class="instruction">以下の内容で送信しますか？</p>
-        <div class="confirm-area">
-            <div class="form-group">
-                <label>・お問い合わせ内容項目</label>
-                <p id="res-kind" class="confirm-text"></p>
+    <header>
+        <div class="header-content">
+            <div class="logo-text">
+                SPRING MUSIC<br>
+                <span>FESTIVAL 2026</span>
             </div>
-            <div class="form-group">
-                <label>・お名前</label>
-                <p id="res-name" class="confirm-text"></p>
-            </div>
-            <div class="form-group">
-                <label>・メールアドレス</label>
-                <p id="res-email" class="confirm-text"></p>
-            </div>
-            <div class="form-group">
-                <label>・電話番号</label>
-                <p id="res-tel" class="confirm-text"></p>
-            </div>
-            <div class="form-group">
-                <label>・お問い合わせ内容</label>
-                <p id="res-message" class="confirm-text"></p>
+            <nav class="desktop-nav">
+                <a href="./artists/index.html">アーティスト</a>
+                <a href="./timetable.html">タイムテーブル</a>
+                <a href="./access.html">会場案内</a>
+                <a href="./goods.html">グッズ</a>
+                <a href="./ticket.html">チケット情報</a>
+                <a href="./contact.html">お問い合わせ</a>
+            </nav>
+            <div class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-        <div class="button-container">
-            <button type="button" class="back-btn" onclick="history.back()">修正する</button>
-            <button type="button" class="submit-btn" onclick="alert('送信しました！')">送信する</button>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="title-section">
+                <h1>CONTACT</h1>
+                <p>お問い合わせ</p>
+            </div>
+            <div class="confirm-area">
+                <div class="form-group">
+                    <label>・お問い合わせ内容項目</label>
+                    <p id="res-kind" class="confirm-text"></p>
+                </div>
+                <div class="form-group">
+                    <label>・お名前</label>
+                    <p id="res-name" class="confirm-text"></p>
+                </div>
+                <div class="form-group">
+                    <label>・メールアドレス</label>
+                    <p id="res-email" class="confirm-text"></p>
+                </div>
+                <div class="form-group">
+                    <label>・電話番号</label>
+                    <p id="res-tel" class="confirm-text"></p>
+                </div>
+                <div class="form-group">
+                    <label>・お問い合わせ内容</label>
+                    <p id="res-message" class="confirm-text"></p>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="button" class="back-btn" onclick="history.back()">修正する</button>
+                <button type="button" class="submit-btn" onclick="location.href='./contact-thanks.html'">送信する</button>
+            </div>
+
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <a href="./index.html">HOME</a><br>
+                        <a href="./privacy.html">プライバシーポリシー</a><br>
+                        <a href="./contact.html">お問い合わせ</a>
+                    </div>
+                    <div>
+                        <div style="font-size: 14px; margin-bottom: 10px;">Map</div>
+                        <div class="footer-map"></div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    SPRING MUSIC FESTIVAL
+                </div>
+            </footer>
         </div>
-    </div>
+    </main>
+
+
     <script>
         // URLの後ろについているデータ（?name=山田...など）を取得
         const params = new URLSearchParams(window.location.search);
