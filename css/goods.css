@@ -1,0 +1,64 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.MAPTOP {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: -5px;
+  font-size: 40px;
+  
+}
+
+.MAPSUB {
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 50px;
+  font-size: 24px;
+  color: #555;
+}
+
+.goods-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px; 
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 0 20px;
+}
+
+.goods-item img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+}
+
+.Note {
+  font-weight: bold;
+  margin-top: 40px;
+  margin-left: 10px;
+}
+
+
+@media screen and (max-width: 480px) {
+  .goods-list {
+    grid-template-columns: repeat(2,1fr);
+    gap: 16px;
+  }
+
+  h1 {
+    margin-bottom: 40px;
+  }
+}
