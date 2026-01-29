@@ -1,11 +1,313 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>プライバシーポリシー</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --festival-orange: #ff8c00;
+      --festival-cyan: #00ced1;
+    }
+
+    /* 1. スムーススクロールを有効化 */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* 2. 移動先がヘッダーに被らないための余白設定 */
+    section {
+      scroll-margin-top: 100px;
+      /* ヘッダーの高さに合わせて調整 */
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: #fff;
+    }
+
+    /* ヘッダー */
+    .custom-header {
+      border-bottom: 2px solid var(--festival-cyan);
+      background-color: #fff;
+      z-index: 1030;
+    }
+
+    .logo-text {
+      color: var(--festival-orange);
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    /* MENUのデザイン（画像案に準拠） */
+    .menu-container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .menu-title {
+      border-bottom: 2px solid #333;
+      display: inline-block;
+      width: 100%;
+      font-weight: bold;
+    }
+
+    .list-group-item {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+      font-size: 0.9rem;
+    }
+
+    /* 見出しデザイン */
+    .category-title {
+      color: var(--festival-orange);
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+      margin-top: 3rem;
+    }
+
+    .accordion-button {
+      font-weight: bold;
+      padding: 1.2rem 1rem;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: #fffaf5;
+      color: var(--festival-orange);
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .footer-link {
+      color: var(--festival-cyan);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* セクション見出し(h3)のカスタマイズ */
+    .section-number-title {
+      color: #FF9F55;
+      /* 画像に基づいたオレンジ色 */
+      font-weight: bold;
+      font-size: 1.25rem;
+      margin-top: 3.5rem;
+      /* 上にしっかり余白を確保 */
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    /* アンカーリンクで飛んだ時に見出しが隠れないようにする設定 */
+    section {
+      scroll-margin-top: 110px;
+    }
+
+    /* スムーズスクロールを有効化 */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
+
 <body>
-  
+  <header class="custom-header p-2 mb-4 sticky-top">
+    <nav class="navbar bg-white sticky-top p-2">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#" style="color: #ff8c00;">
+          SPRING MUSIC<br>FESTIVAL
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          style="border: none;">
+          <span
+            style="display: inline-block; width: 30px; height: 30px; vertical-align: middle; 
+                 background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox=%270 0 30 30%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath stroke=%27%2300ced1%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3E%3C/svg%3E');">
+          </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto pt-3">
+            <li class="nav-item"><a class="nav-link fw-bold" href="#">TOP</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold" href="#">NEWS</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold" href="#">ARTISTS</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold" href="#">TICKETS</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold" href="#">Q&A</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">PRIVACY POLICY</h2>
+    <p class="small">プライバシーポリシー</p>
+  </div>
+  <div class="text-center mb-5 mx-auto" style="max-width: 700px;">
+    <p class="content-text">
+      Spring Music Festival 2025実行委員会(以下「当実行委員会」)は、
+      お客様の個人情報保護の重要性について認識し、個人情報の保護に
+      関する法律(個人情報保護法)を遵守すると共に以下のプライバシー
+      ポリシー(以下「本ポリシー」)に従い、適切な取扱い及び保護に努めます。
+
+    </p>
+  </div>
+  <main class="container mb-5" style="max-width: 600px;">
+    <nav class="mb-5 menu-container">
+      <h5 class="menu-title pb-1">MENU</h5>
+      <div class="list-group list-group-flush">
+        <a href="#section1" class="list-group-item list-group-item-action">個人情報の定義</a>
+        <a href="#section2" class="list-group-item list-group-item-action">個人情報の取得</a>
+        <a href="#section3" class="list-group-item list-group-item-action">個人情報の利用目的</a>
+        <a href="#section4" class="list-group-item list-group-item-action">個人情報の第三者提供</a>
+        <a href="#section5" class="list-group-item list-group-item-action">個人情報の管理</a>
+        <a href="#section6" class="list-group-item list-group-item-action">個人情報の開示・訂正・削除</a>
+        <a href="#section7" class="list-group-item list-group-item-action">Cookie（クッキー）について</a>
+        <a href="#section8" class="list-group-item list-group-item-action">アクセス解析ツールについて</a>
+        <a href="#section9" class="list-group-item list-group-item-action">お問い合わせ窓口</a>
+        <a href="#section10" class="list-group-item list-group-item-action">プライバシーポリシーの変更</a>
+
+      </div>
+    </nav>
+    <section id="section1">
+      <h3 class="section-number-title">1. 個人情報の定義</h3>
+      <p class="content-text">
+        本ポリシーにおいて、個人情報とは、お客様個人に
+        関する情報であって、お名前、メールアドレス、
+        電話番号など、お客様を識別できる情報をいいます。
+      </p>
+    </section>
+
+    <section id="section2">
+      <h3 class="section-number-title">2. 個人情報の取得</h3>
+      <p class="content-text mb-2">
+        当実行委員会は、以下の目的のために必要な範囲で、お客様の個人情報を取得いたします。
+      </p>
+      <ul class="list-unstyled content-text ps-2">
+        <li>・お問い合わせへの対応</li>
+        <li>・イベントに関する情報提供</li>
+        <li>・チケット販売に関する連絡</li>
+        <li>・アンケート実施とサービス向上</li>
+      </ul>
+      <p class="content-text mt-3">
+        個人情報の取得は、適法かつ公正な手段によって行います。
+      </p>
+    </section>
+
+    <section id="section3">
+      <h3 class="section-number-title">3. 個人情報の利用目的</h3>
+      <p class="content-text">
+        当実行委員会は、取得した個人情報を以下の目的で利用いたします。
+      <ol>
+        <li>お問い合わせへの回答、ご連絡のため</li>
+        <li>チケット購入に関する確認、連絡のため</li>
+        <li>イベントの開催案内、最新情報のお知らせのため</li>
+        <li>お客様からのご意見、ご感想の収集のため</li>
+        <li>サービス向上、マーケティング調査のため</li>
+        <li>重要なお知らせ(開催中止、変更等)の連絡のため</li>
+      </ol>
+      上記以外の目的で個人情報を利用する場合は、事前にお客様の同意を得るものとします。
+      </p>
+    </section>
+
+    <section id="section4">
+      <h3 class="section-number-title">4. 個人情報の第三者提供</h3>
+      <p class="content-text">
+        当実行委員会は、以下の場合を除き、お客様の個人情報を第三者に提供することはございません。
+      <ul class="content-text mb-2">
+        <li>お客様の同意がある場合</li>
+        <li>法令に基づき提供が必要な場合</li>
+        <li>人の生命、身体または財産の保護のために必要がある場合であって、お客様の同意を得ることが困難である場合</li>
+        <li>業務委託先に必要な範囲で提供する場合(チケット販売業者、メール配信サービス等)</li>
+      </ul>
+      業務委託先に提供する場合は、適切な管理・監督を行います。
+      </p>
+
+    </section>
+
+    <section id="section5">
+      <h3 class="section-number-title">5. 個人情報の管理</h3>
+      <p class="content-text">
+        当実行委員会は、お客様の個人情報を正確かつ最新の状態に保ち、個人情報への不正アクセス、紛失、破損、改ざん、漏洩などを防止するため、必要かつ適切な安全管理措置を実施いたします。
+      <p class="content-text">また、個人情報は、利用目的の達成に必要な期間のみ保管し、不要となった場合は速やかに削除または破棄いたします。</p>
+      </p>
+    </section>
+
+    <section id="section6">
+      <h3 class="section-number-title">6. 個人情報の開示・訂正・削除</h3>
+      <p class="content-text">
+        お客様は、当実行委員会が保有するご自身の個人情報について、以下の権利を有します。
+      <ul class="content-text mb-2">
+        <li>開示の請求</li>
+        <li>訂正・追加・削除の請求</li>
+        <li>利用停止・消去の請求</li>
+      </ul>
+      これらのご請求は、本ページ下部の「お問い合わせ窓口」までご連絡ください。ご本人確認の上、合理的な期間内に対応いたします。
+      </p>
+    </section>
+
+    <section id="section7">
+      <h3 class="section-number-title">7.Cookie(クッキー)について</h3>
+      <p class="content-text">
+        当サイトでは、サービス向上のため、Cookie(クッキー)を使用する場合があります。Cookieとは、Webサイトがお客様のコンピュータに送信する小さなテキストファイルで、お客様のブラウザに保存されます。Cookieは個人を特定する情報を含みませんが、お客様のアクセス状況の把握や、サイトの利便性向上に使用されます。Cookieの使用を希望されない場合は、ブラウザの設定により無効化することが可能です。
+
+      </p>
+    </section>
+
+    <section id="section8">
+      <h3 class="section-number-title">8.アクセス解析ツールについて</h3>
+      <p class="content-text">
+        当サイトでは、サービス向上のため、Google
+        Analyticsなどのアクセス解析ツールを使用する場合があります。これらのツールはCookieを使用して、お客様のアクセス情報を収集しますが、個人を特定する情報は含まれません。
+      <p class="content-text">データの収集・処理方法については、各ツールの利用規約・プライバシーポリシーをご確認ください。</p>
+      </p>
+    </section>
+
+    <section id="section9">
+      <h3 class="section-number-title">9. お問い合わせ窓口</h3>
+      <p class="content-text">
+        個人情報の取扱いに関するお問い合わせは、以下までご連絡ください。</p>
+      <p>Spring Music Festival 2025実行委員会<br>
+        個人情報お問い合わせ窓口<br>
+        メールアドレス: privacy@springmusicfes2026.example.com<br>
+        受付時間: 平日 10:00〜17:00<br>
+      </p>
+    </section>
+
+    <section id="section10">
+      <h3 class="section-number-title">10. プライバシーポリシーの変更</h3>
+      <p class="content-text">
+        当実行委員会は、必要に応じて本ポリシーを変更することがあります。変更後のプライバシーポリシーは、本ページに掲載した時点で効力を生じるものとします。重要な変更がある場合は、当サイト上で適切な方法によりお知らせいたします。
+      </p>
+    </section>
+  </main>
+  <footer class="pt-5 pb-3">
+    <div class="container" style="max-width: 600px;">
+      <div class="row mb-5">
+        <div class="col-7">
+          <a href="#" class="footer-link h6 fw-bold">HOME</a>
+          <a href="#" class="footer-link h6 fw-bold">プライバシーポリシー</a>
+          <a href="#" class="footer-link h6 fw-bold">お問い合わせ</a>
+        </div>
+        <div class="col-5">
+          <p class="mb-1 small" style="color:var(--festival-cyan)">Map</p>
+          <img src="https://via.placeholder.com/200x150/555/fff?text=Map+Image" class="img-fluid border border-white"
+            alt="Map">
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <p style="color: var(--festival-orange); font-size: 0.7rem; font-weight: bold;">SPRING MUSIC FESTIVAL
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
