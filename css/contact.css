@@ -85,3 +85,29 @@ label{
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
+.message {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+
+.link {
+    display: block;          /* ブロック要素にして幅や余白を指定できるようにする */
+    width: 200px;            /* ボタンの幅 */
+    margin: 30px auto;       /* 上下に30pxの余白、左右は自動（これで中央に来ます） */
+    text-align: center;      /* 文字を中央揃え */
+    
+    /* 以下、ボタン風のデザイン（お好みで調整してください） */
+    padding: 15px 0;
+    background-color: #333;  /* 黒っぽい色 */
+    color: #fff;             /* 文字色 */
+    text-decoration: none;   /* 下線を消す */
+    border-radius: 30px;     /* 角丸 */
+    transition: opacity 0.3s;
+}
+
+.link:hover {
+    opacity: 0.8;            /* ホバー時に少し薄く */
+}
