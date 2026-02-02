@@ -14,22 +14,6 @@ h1 {
   margin-bottom: 60px;
 }
 
-.MAPTOP {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: -5px;
-  font-size: 40px;
-  
-}
-
-.MAPSUB {
-  text-align: center;
-  margin-top: -10px;
-  margin-bottom: 50px;
-  font-size: 24px;
-  color: #555;
-}
-
 .goods-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -61,4 +45,28 @@ h1 {
   h1 {
     margin-bottom: 40px;
   }
+}
+
+
+/* PC用 (1280px以上) */
+@media (min-width: 1280px) {
+    body { overflow: hidden; } 
+    
+    main {
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: calc(100vh - 70px);
+        padding-top: 10px;
+    }
+
+    .container{
+        max-width: 765px;
+    }
+
+    /* カスタムスクロールバー */
+    .container::-webkit-scrollbar { width: 8px; }
+    .container::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.3); }
+    .container::-webkit-scrollbar-thumb { background: rgba(0, 188, 212, 0.5); border-radius: 4px; }
 }
