@@ -1,17 +1,4 @@
-* {
-  box-sizing: border-box;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body {
-  margin: 0;
-  font-family: "Noto Sans JP", sans-serif;
-  line-height: 1.7;
-  color: #333;
-  background: linear-gradient(#e8f6f3, #ffffff);
-}
+@charset "UTF-8";
 
 
 h1 {
@@ -91,4 +78,28 @@ li {
   iframe {
     height: 240px;
   }
+}
+
+
+/* PC用 (1280px以上) */
+@media (min-width: 1280px) {
+    body { overflow: hidden; } 
+    
+    main {
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: calc(100vh - 70px);
+        padding-top: 10px;
+    }
+
+    .container{
+        max-width: 765px;
+    }
+
+    /* カスタムスクロールバー */
+    .container::-webkit-scrollbar { width: 8px; }
+    .container::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.3); }
+    .container::-webkit-scrollbar-thumb { background: rgba(0, 188, 212, 0.5); border-radius: 4px; }
 }
