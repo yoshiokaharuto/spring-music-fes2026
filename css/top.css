@@ -1,3 +1,4 @@
+@charset "UTF-8";
 
 /* ==========================================
    メインコンテンツ・セクション
@@ -9,9 +10,7 @@ main {
 }
 
 .container {
-    max-width: 580px;
     margin: 0 auto;
-    padding: 20px;
 }
 
 /* ロゴ・開催概要セクション */
@@ -77,10 +76,23 @@ main {
     transition: background 0.3s;
 }
 
-.news-item:hover { background: #f5f5f5; }
-.news-date { font-size: 12px; color: #666; margin-bottom: 5px; }
-.news-title { font-size: 14px; }
-.news-arrow { color: #ff6b35; font-size: 20px; }
+.news-item:hover { 
+    background: #f5f5f5; 
+}
+
+.news-date { 
+    font-size: 12px; 
+    color: #666; 
+    margin-bottom: 5px; 
+}
+.news-title { 
+    font-size: 14px; 
+}
+
+.news-arrow { 
+    color: #ff6b35; 
+    font-size: 20px; 
+}
 
 /* アーティストグリッド */
 .artist-grid {
@@ -89,7 +101,10 @@ main {
     gap: 15px;
 }
 
-.artist-card { text-align: center; }
+.artist-card { 
+    text-align: center; 
+}
+
 .artist-img {
     width: 100%;
     height: 120px;
@@ -98,7 +113,10 @@ main {
     border-radius: 5px;
     object-fit: cover;
 }
-.artist-name { font-size: 13px; }
+
+.artist-name { 
+    font-size: 13px; 
+}
 
 /* ボタン類 */
 .view-more-btn {
@@ -136,13 +154,13 @@ main {
 
 /* タブレット用 */
 @media (min-width: 768px) {
-    .container { max-width: 720px; }
+    .container { max-width: 765px; }
     .artist-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
+
 /* PC用 (1280px以上) */
 @media (min-width: 1280px) {
-    body { overflow: hidden; } 
     
     main {
         margin-top: 0;
@@ -150,19 +168,18 @@ main {
         justify-content: center;
         align-items: flex-start;
         min-height: calc(100vh - 70px);
-        padding-top: 20px;
+        padding-top: 10px;
     }
 
     .container {
-        max-width: 580px;
-        height: calc(100vh - 150px);
-        overflow-y: auto;
-        background: rgba(255, 255, 255, 0.5);
-        border-radius: 10px;
+        max-width: 765px;
     }
 
     /* カスタムスクロールバー */
     .container::-webkit-scrollbar { width: 8px; }
     .container::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.3); }
-    .container::-webkit-scrollbar-thumb { background: rgba(0, 188, 212, 0.5); border-radius: 4px; }
+    .container::-webkit-scrollbar-thumb { 
+        background: rgba(0, 188, 212, 0.5); 
+        border-radius: 4px; 
+    }
 }

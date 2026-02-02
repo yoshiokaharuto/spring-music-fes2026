@@ -112,9 +112,35 @@ h1 {
     fill: #fff;
 }
 
+/* ==========================================
+   4. レスポンシブ対応 (PC表示の調整)
+   ========================================== */
+
+/* タブレット用 */
+@media (min-width: 768px) {
+    .container { max-width: 765px; }
+    .artist-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* PC用 (1280px以上) */
 @media (min-width: 1280px) {
-    .container {
-        padding: 40px 20px; /* PC版は既存のスクロールエリア内の余白に戻す */
+    body { overflow: hidden; } 
+    
+    main {
         margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: calc(100vh - 70px);
+        padding-top: 20px;
     }
+
+    .container{
+        max-width: 770px;
+    }
+
+    /* カスタムスクロールバー */
+    .container::-webkit-scrollbar { width: 8px; }
+    .container::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.3); }
+    .container::-webkit-scrollbar-thumb { background: rgba(0, 188, 212, 0.5); border-radius: 4px; }
 }
