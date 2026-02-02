@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+/* タブボタンの親要素 */
+.tab-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* タブボタン本体 */
+.tab-btn {
+    background: #fff;
+    border: 1px solid #000;
+    color: #ff6b35;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+/* 選択中のボタンのデザイン */
+.tab-btn.active {
+    background-color: black;
+    color: #fff;
+}
+
+/* --- ボタンのホバー動作 --- */
+
+/* 1. マウスを乗せた時（共通） */
+.tab-btn:hover {
+    opacity: 0.8; /* 少し透明にして「反応している感」を出す */
+}
+
+/* 2. 「選択されていないボタン」にマウスを乗せた時 */
+.tab-btn:not(.active):hover {
+    background-color: #fff0eb; /* 背景を薄いオレンジにする */
+}
+
+/* コンテンツ切り替え時のふわっとアニメーション */
+.timetable-content {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 画像を囲む枠。スマホで画像がはみ出す場合に横スクロールさせる */
+.timetable-container {
+    width: 100%;
+    margin: 0 auto 20px;
+}
+
+.timetable-img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.timetable-notes {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    padding: 0 10px;
+}
+
+/* PC（1280px以上）の調整 */
+@media (min-width: 1280px) {
+    .timetable-img {
+        max-width: 600px; /* PCでは大きくなりすぎないように制限 */
+        margin: 0 auto;
+    }
+}
