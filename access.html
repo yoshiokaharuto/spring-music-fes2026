@@ -1,28 +1,146 @@
-　<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/access.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/access.css">
     <title>会場案内</title>
 </head>
 <body>
 
-    <h1 class="MAPTOP">FESTIVAL MAP</h1>  
-    <h1 class="MAPSUB">会場案内</h1>
-    <h2>会場</h2>
-    <div class="place">
-        <p><strong>会場名：</strong>グリーンパーク野外ステージ</p>
-        <p><strong>住所：</strong>東京都〇〇区△△1-2-3</p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3069.5517798905244!2d141.14279209999998!3d39.7047807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f857630971ceb65%3A0xa71278d9c8f84080!2zTUNM55ub5bKh5oOF5aCx44OT44K444ON44K577yG44OH44K244Kk44Oz5bCC6ZaA5a2m5qChIOODh-OCtuOCpOODs-aDheWgsemkqA!5e0!3m2!1sja!2sjp!4v1769043787319!5m2!1sja!2sjp" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    <h2>アクセス方法</h2>
+    <header>
+        <div class="header-content">
+            <div class="logo-text">
+                <span>SPRING MUSIC</span><br>
+                <span>FESTIVAL 2026</span>
+            </div>
+            <nav class="desktop-nav">
+                <a href="./artists/index.html">アーティスト</a>
+                <a href="./timetable.html">タイムテーブル</a>
+                <a href="./access.html">会場案内</a>
+                <a href="./goods.html">グッズ</a>
+                <a href="./ticket.html">チケット情報</a>
+                <a href="./contact.html">お問い合わせ</a>
+            </nav>
+            <div class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+  </header>
+
+  <nav class="mobile-nav-overlay" id="mobileNav">
     <ul>
-        <li>電車：JR〇〇駅から徒歩15分</li>
-        <li>車：駐車場100台（事前予約制）</li>
+        <li><a href="./artists/index.html">アーティスト</a></li>
+        <li><a href="./timetable.html">タイムテーブル</a></li>
+        <li><a href="./access.html">会場案内</a></li>
+        <li><a href="./goods.html">グッズ</a></li>
+        <li><a href="./ticket.html">チケット情報</a></li>
+        <li><a href="./contact.html">お問い合わせ</a></li>
     </ul>
-    <h2>会場マップ</h2>
-    <img class="map" src="/images/map.webp" alt="会場マップ">
-    <a href="#"><p class="PDF">会場マップをPDFでダウンロード</p></a>
+  </nav>
+
+  <main>
+    <div class="container">
+        <div class="title-section">
+          <h1>FESTIVAL MAP</h1>
+          <p>会場案内</p>
+        </div>
+
+        <h2>会場</h2>
+
+        <div class="place">
+            <p><strong>会場名：</strong>グリーンパーク野外ステージ</p>
+            <p><strong>住所：</strong>東京都〇〇区△△1-2-3</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3069.5517798905244!2d141.14279209999998!3d39.7047807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f857630971ceb65%3A0xa71278d9c8f84080!2zTUNM55ub5bKh5oOF5aCx44OT44K444ON44K577yG44OH44K244Kk44Oz5bCC6ZaA5a2m5qChIOODh-OCtuOCpOODs-aDheWgsemkqA!5e0!3m2!1sja!2sjp!4v1769043787319!5m2!1sja!2sjp" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <h2>アクセス方法</h2>
+
+        <ul>
+            <li>電車：JR〇〇駅から徒歩15分</li>
+            <li>車：駐車場100台（事前予約制）</li>
+        </ul>
+
+        <h2>会場マップ</h2>
+
+        <img class="map" src="./images/map.webp" alt="会場マップ">
+        <a href="#"><p class="PDF">会場マップをPDFでダウンロード</p></a>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#home">HOME</a><br>
+                    <a href="#privacy">プライバシーポリシー</a><br>
+                    <a href="#contact">お問い合わせ</a>
+                </div>
+                <div>
+                    <div style="font-size: 14px; margin-bottom: 10px;">Map</div>
+                    <div class="footer-map"></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                SPRING MUSIC FESTIVAL
+            </div>
+        </footer>
+    </div>
+  </main>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const navLinks = document.querySelectorAll('.mobile-nav-overlay a');
+
+    // メニューの開閉を切り替える関数
+    function toggleMenu() {
+        menuBtn.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        
+        // メニューが開いている時は背面をスクロールさせない
+        if (mobileNav.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+    // タブ切り替え関数
+    function switchTab(tabId, event) {
+        // 1. すべての画像コンテンツを非表示にする
+        const contents = document.querySelectorAll('.timetable-content');
+        contents.forEach(content => {
+            content.style.display = 'none';
+        });
+
+        // 2. クリックされたIDのコンテンツだけ表示する
+        document.getElementById(tabId).style.display = 'block';
+
+        // 3. すべてのボタンから 'active' クラスを外す
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // 4. クリックされたボタンにだけ 'active' クラスをつける
+        // (event.currentTarget はクリックされた要素自身を指します)
+        event.currentTarget.classList.add('active');
+    }
+
+    // ボタンクリック
+    menuBtn.addEventListener('click', toggleMenu);
+
+    // リンクをクリックしたら閉じる
+    navLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+
+    // ★追加：メニューの背景（画面全体）をクリックしても閉じるようにする
+    mobileNav.addEventListener('click', (e) => {
+        if (e.target === mobileNav) { // 背景部分をタップした時だけ
+            toggleMenu();
+        }
+    });
+</script>
 </body>
 </html>
