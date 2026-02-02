@@ -169,12 +169,11 @@ header {
     color: #ff6b35;
     font-weight: bold;
     font-size: 14px;
-    line-height: 1.2;
+    line-height: 1;
 }
 
 .logo-text span {
     display: block;
-    font-size: 16px;
 }
 
 /* デスクトップ用ナビ（スマホ時は非表示） */
@@ -226,9 +225,9 @@ footer {
    7. レスポンシブ対応 (Media Queries)
    ========================================== */
 
-/* タブレット用 (768px以上) */
+/* タブレット用 */
 @media (min-width: 768px) {
-    .container, .footer-content { max-width: 720px; }
+    .container { max-width: 765px; }
     .artist-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
@@ -253,14 +252,14 @@ footer {
     
     .desktop-nav a:hover { color: #00bcd4; }
     
-    main {
+    /* main {
         margin-top: 0;
         display: flex;
         justify-content: center;
         align-items: flex-start;
         min-height: calc(100vh - 70px);
         padding-top: 20px;
-    }
+    } */
 
     .container {
         max-width: 765px;
