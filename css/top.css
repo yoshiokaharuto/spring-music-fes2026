@@ -154,7 +154,7 @@ main {
 
 /* タブレット用 */
 @media (min-width: 768px) {
-    .container { max-width: 765px; }
+    .container { max-width: 770px; }
     .artist-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
@@ -167,12 +167,12 @@ main {
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        min-height: calc(100vh - 70px);
+        min-height: calc(100vh - 30px);
         padding-top: 10px;
     }
 
     .container {
-        max-width: 765px;
+        min-width: 770px;
     }
 
     /* カスタムスクロールバー */
