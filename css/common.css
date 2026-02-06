@@ -227,16 +227,34 @@ footer {
 
 /* タブレット用 */
 @media (min-width: 768px) {
-    .container { max-width: 765px; }
-    .artist-grid { grid-template-columns: repeat(4, 1fr); }
+
+    main {
+        margin-top: 0;
+    }
+
+    .container { 
+        max-width: 765px; 
+    }
+
+    .artist-grid { 
+        grid-template-columns: repeat(4, 1fr); 
+    }
 }
 
 /* PC用 (1280px以上) */
 @media (min-width: 1280px) {
-    body { overflow: hidden; } /* PCでは全体スクロールを抑制（コンテナ内スクロール） */
+
+    body { 
+        overflow: hidden; 
+    } /* PCでは全体スクロールを抑制（コンテナ内スクロール） */
     
-    header { position: relative; }
-    .menu-btn, .mobile-nav-overlay { display: none; } /* ハンバーガー関連を隠す */
+    header { 
+        position: relative; 
+    }
+
+    .menu-btn, .mobile-nav-overlay { 
+        display: none; 
+    } /* ハンバーガー関連を隠す */
     
     .desktop-nav {
         display: flex;
@@ -252,18 +270,10 @@ footer {
     
     .desktop-nav a:hover { color: #00bcd4; }
     
-    /* main {
-        margin-top: 0;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        min-height: calc(100vh - 70px);
-        padding-top: 20px;
-    } */
 
     .container {
-        max-width: 765px;
-        height: calc(100vh - 150px);
+        min-width: 770px;
+        height: calc(100vh - 105px); /* ヘッダーとフッターを除いた高さ */
         overflow-y: auto;
         background: rgba(255, 255, 255, 0.5);
         border-radius: 10px;
