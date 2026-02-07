@@ -118,8 +118,33 @@ main {
     font-size: 13px; 
 }
 
+
+.goods-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.goods-card { 
+    text-align: center; 
+}
+
+.goods-img {
+    width: 100%;
+    height: auto;
+    background: #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.goods-name { 
+    font-size: 13px; 
+}
+
 /* ボタン類 */
 .view-more-btn {
+    text-align: center;
     display: block;
     width: 150px;
     margin: 20px auto 0;
