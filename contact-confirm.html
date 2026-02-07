@@ -82,15 +82,16 @@
     </main>
 
 
-    <script>
-        // URLの後ろについているデータ（?name=山田...など）を取得
-        const params = new URLSearchParams(window.location.search);
-        // 各IDの場所に、URLから取ったデータを流し込む
-        document.getElementById('res-kind').innerText = params.get('kind');
-        document.getElementById('res-name').innerText = params.get('name');
-        document.getElementById('res-email').innerText = params.get('email');
-        document.getElementById('res-tel').innerText = params.get('tel') || '（未入力）';
-        document.getElementById('res-message').innerText = params.get('message');
-    </script>
+<script src="./js/menu.js"></script>
+<script>
+    // URLの後ろについているデータ（?name=山田...など）を取得
+    const params = new URLSearchParams(window.location.search);
+    // 各IDの場所に、URLから取ったデータを流し込む
+    document.getElementById('res-kind').innerText = params.get('kind');
+    document.getElementById('res-name').innerText = params.get('name');
+    document.getElementById('res-email').innerText = params.get('email');
+    document.getElementById('res-tel').innerText = params.get('tel') || '（未入力）';
+    document.getElementById('res-message').innerText = params.get('message');
+</script>
 </body>
 </html>
