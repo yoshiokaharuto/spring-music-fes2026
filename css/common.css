@@ -20,6 +20,10 @@ main {
     z-index: 1;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 .container {
     max-width: 650px;
