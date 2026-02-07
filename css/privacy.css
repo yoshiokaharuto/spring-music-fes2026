@@ -1,107 +1,107 @@
-@charset "UTF-8";
+/* privacy.css */
 
-:root {
-  --festival-orange: #ff8c00;
-  --festival-cyan: #00ced1;
+#section1,
+#section2,
+#section3,
+#section4,
+#section5,
+#section6,
+#section7,
+#section8,
+#section9,
+#section10
+{
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  scroll-margin-top: 80px;
 }
 
-/* 1. スムーススクロールを有効化 */
-html {
-  scroll-behavior: smooth;
+.privacy-intro {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  line-height: 1.8;
 }
 
-/* 2. 移動先がヘッダーに被らないための余白設定 */
-section {
-  scroll-margin-top: 100px;
-  /* ヘッダーの高さに合わせて調整 */
+.privacy-menu {
+  background-color: #eee;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 50px;
 }
 
-body {
-  font-family: sans-serif;
-  background-color: #fff;
-}
-
-/* ヘッダー */
-.custom-header {
-  border-bottom: 2px solid var(--festival-cyan);
-  background-color: #fff;
-  z-index: 1030;
-}
-
-.logo-text {
-  color: var(--festival-orange);
-  font-weight: bold;
-  line-height: 1.2;
-}
-
-/* MENUのデザイン（画像案に準拠） */
-.menu-container {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.menu-title {
+.privacy-menu h5 {
   border-bottom: 2px solid #333;
-  display: inline-block;
-  width: 100%;
-  font-weight: bold;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-.list-group-item {
-  border: none;
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
-  font-size: 0.9rem;
+.privacy-menu ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2列並び */
+  gap: 10px;
 }
 
-/* 見出しデザイン */
-.category-title {
-  color: var(--festival-orange);
-  border-bottom: 2px solid #333;
-  padding-bottom: 5px;
-  margin-top: 3rem;
-}
-
-.accordion-button {
-  font-weight: bold;
-  padding: 1.2rem 1rem;
-}
-
-.accordion-button:not(.collapsed) {
-  background-color: #fffaf5;
-  color: var(--festival-orange);
-}
-
-footer {
-  background-color: #000;
-  color: #fff;
-}
-
-.footer-link {
-  color: var(--festival-cyan);
+.privacy-menu a {
   text-decoration: none;
-  display: block;
-  margin-bottom: 10px;
+  color: #00bcd4;
 }
 
-/* セクション見出し(h3)のカスタマイズ */
+.privacy-content section {
+  margin-bottom: 40px;
+}
+
 .section-number-title {
-  color: #FF9F55;
-  /* 画像に基づいたオレンジ色 */
-  font-weight: bold;
-  font-size: 1.25rem;
-  margin-top: 3.5rem;
-  /* 上にしっかり余白を確保 */
-  margin-bottom: 1.2rem;
-  display: block;
+  font-size: 20px;
+  border-left: 5px solid #71DCC4;
+  padding-left: 15px;
+  margin-bottom: 15px;
 }
 
-/* アンカーリンクで飛んだ時に見出しが隠れないようにする設定 */
-section {
-  scroll-margin-top: 110px;
+.privacy-content p, .privacy-content li {
+  line-height: 1.8;
+  color: #444;
 }
 
-/* スムーズスクロールを有効化 */
-html {
-  scroll-behavior: smooth;
+.contact-info {
+  background: #eee;
+  padding: 20px;
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 480px) {
+  .privacy-menu ul {
+      grid-template-columns: 1fr; /* スマホでは1列 */
+  }
+}
+
+/* PC用 (Goods.cssと同じ設定を適用してスクロールさせる) */
+@media (min-width: 1280px) {
+  body { overflow: hidden; } 
+  
+  main {
+      margin-top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: calc(100vh - 70px);
+      padding-top: 10px;
+  }
+
+  .container {
+      max-width: 765px;
+      height: calc(100vh - 100px); /* 画面内に収める */
+      overflow-y: scroll;
+      padding-right: 15px;
+  }
+
+  .container::-webkit-scrollbar { width: 8px; }
+  .container::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.3); }
+  .container::-webkit-scrollbar-thumb { background: rgba(0, 188, 212, 0.5); border-radius: 4px; }
 }
