@@ -8,6 +8,10 @@ p{
     margin-bottom: 20px;
 }
 
+.title{
+  text-align: center;
+}
+
 .contact-form {
   border: 1.2px solid #FF6400;
   background-color: #fff;

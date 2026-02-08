@@ -73,8 +73,78 @@
     line-height: 1.8;
 }
 
-/* guide.cssから引き継ぐ共通パーツ（h2, h3など）はそのまま流用 */
+/* ==========================================
+   ページ内リンクメニュー (#PageMenu)
+   ========================================== */
+#PageMenu {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
+/* MENUタイトル */
+#PageMenu .menu-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 2px solid #666; /* タイトルの下の少し太い線 */
+  padding-bottom: 8px;
+  margin-bottom: 0;
+}
+
+/* リスト全体のスタイル */
+#PageMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 各項目のスタイル */
+#PageMenu li {
+  margin: 0;
+  border-bottom: 1px solid #ddd; /* 各項目の下の細い線 */
+  list-style-type: none; /* 点を消す */
+}
+
+/* 最後の項目だけ線を消す */
+#PageMenu li:last-child {
+  border-bottom: none;
+}
+
+/* リンクのスタイル */
+#PageMenu a {
+  display: block;      /* 枠いっぱいをクリック可能にする */
+  padding: 12px 5px;   /* 上下の余白 */
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s;
+  position: relative;
+}
+
+/* 右側に矢印を出す（アクセント） */
+#PageMenu a::after {
+  content: '›';
+  position: absolute;
+  right: 5px;
+  color: #999;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+/* マウスを乗せた時の動き */
+#PageMenu a:hover {
+  color: #ff6b35; /* テーマカラーのオレンジ */
+  padding-left: 10px; /* 少し右に動く */
+  background-color: #f9f9f9;
+}
+
+#PageMenu a:hover::after {
+  color: #ff6b35;
+}
 
 /* ------------------------------------------
    レスポンシブ対応 (PC表示)
