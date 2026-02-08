@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>タイムテーブル</title>
+  <link rel="icon" href="./images/spring_logo.png">
+  <title>タイムテーブル - Spring Music Festival</title>
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/timetable.css">
 </head>
@@ -11,8 +12,10 @@
   <header>
         <div class="header-content">
             <div class="logo-text">
-                <span>SPRING MUSIC</span><br>
-                <span>FESTIVAL 2026</span>
+                <a href="./index.html">
+                    <span>SPRING MUSIC</span><br>
+                    <span>FESTIVAL 2026</span>
+                </a>
             </div>
             <nav class="desktop-nav">
                 <a href="./artists/index.html">アーティスト</a>
@@ -20,6 +23,7 @@
                 <a href="./access.html">会場案内</a>
                 <a href="./goods.html">グッズ</a>
                 <a href="./ticket.html">チケット情報</a>
+                <a href="./faq.html">よくある質問</a>
                 <a href="./contact.html">お問い合わせ</a>
             </nav>
             <div class="menu-btn" id="menuBtn">
@@ -28,18 +32,19 @@
                 <span></span>
             </div>
         </div>
-  </header>
+    </header>
 
-  <nav class="mobile-nav-overlay" id="mobileNav">
-    <ul>
-        <li><a href="./artists/index.html">アーティスト</a></li>
-        <li><a href="./timetable.html">タイムテーブル</a></li>
-        <li><a href="./access.html">会場案内</a></li>
-        <li><a href="./goods.html">グッズ</a></li>
-        <li><a href="./ticket.html">チケット情報</a></li>
-        <li><a href="./contact.html">お問い合わせ</a></li>
-    </ul>
-  </nav>
+    <nav class="mobile-nav-overlay" id="mobileNav">
+        <ul>
+            <li><a href="./artists/index.html">アーティスト</a></li>
+            <li><a href="./timetable.html">タイムテーブル</a></li>
+            <li><a href="./access.html">会場案内</a></li>
+            <li><a href="./goods.html">グッズ</a></li>
+            <li><a href="./faq.html">よくある質問</a></li>
+            <li><a href="./ticket.html">チケット情報</a></li>
+            <li><a href="./contact.html">お問い合わせ</a></li>
+        </ul>
+    </nav>
 
   <main>
     <div class="container">
@@ -57,22 +62,39 @@
             <div id="day1" class="timetable-content">
                 <img src="./images/0502_timetable.png" alt="05/02 タイムテーブル" class="timetable-img">
             </div>
+
             <div id="day2" class="timetable-content" style="display: none;">
                 <img src="./images/0503_timetable.png" alt="05/03 タイムテーブル" class="timetable-img">
             </div>
         </div>
 
+        <a href="./images/timetable.pdf" class="link" download="timetable.pdf">
+            タイムテーブルのダウンロードはこちら
+        </a>
+
         <div class="timetable-notes">
-          <p>・出演アーティスト及び出演日程・タイムテーブルが変更となる場合がございます。</p>
-          <p>・出演者の変更・キャンセルに伴う払い戻しは行いませんので予めご了承下さい。</p>
+            <p>
+                ・出演アーティスト及び出演日程・タイムテーブルが
+                変更となる場合がございます。
+            </p>
+            <p>
+                ・出演者の変更・キャンセルに伴う払い戻しは
+                行いませんので予めご了承下さい。
+            </p>
         </div>
 
         <footer>
             <div class="footer-content">
                 <div class="footer-links">
-                    <a href="#home">HOME</a><br>
-                    <a href="#privacy">プライバシーポリシー</a><br>
-                    <a href="#contact">お問い合わせ</a>
+                    <a href="./index.html">HOME</a>
+                    <a href="./artists/index.html">アーティスト</a>
+                    <a href="./timetable.html">タイムテーブル</a>
+                    <a href="./access.html">会場案内</a>
+                    <a href="./goods.html">グッズ</a>
+                    <a href="./ticket.html">チケット情報</a>
+                    <a href="./faq.html">よくある質問</a>
+                    <a href="./privacy.html">プライバシーポリシー</a>
+                    <a href="./contact.html">お問い合わせ</a>
                 </div>
                 <div>
                     <div style="font-size: 14px; margin-bottom: 10px;">Map</div>
@@ -86,60 +108,31 @@
     </div>
   </main>
 
-
+<script src="./js/menu.js"></script>
 <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    const navLinks = document.querySelectorAll('.mobile-nav-overlay a');
+    function switchTab(day, event) {
+    // 1. 全てのコンテンツを非表示にする
+    const contents = document.querySelectorAll('.timetable-content');
+    contents.forEach(content => content.style.display = 'none');
 
-    // メニューの開閉を切り替える関数
-    function toggleMenu() {
-        menuBtn.classList.toggle('active');
-        mobileNav.classList.toggle('active');
-        
-        // メニューが開いている時は背面をスクロールさせない
-        if (mobileNav.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
+    // 2. 選択された日のコンテンツを表示する
+    document.getElementById(day).style.display = 'block';
+
+    // 3. ボタンのactiveクラスを付け替える
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+
+    // ★追加：ダウンロードリンクを切り替える
+    const downloadLink = document.getElementById('download-link');
+    if (day === 'day1') {
+        downloadLink.href = './images/0502_timetable.png';
+        downloadLink.download = '0502_timetable.png';
+    } else {
+        downloadLink.href = './images/0503_timetable.png';
+        downloadLink.download = '0503_timetable.png';
     }
-    // タブ切り替え関数
-    function switchTab(tabId, event) {
-        // 1. すべての画像コンテンツを非表示にする
-        const contents = document.querySelectorAll('.timetable-content');
-        contents.forEach(content => {
-            content.style.display = 'none';
-        });
-
-        // 2. クリックされたIDのコンテンツだけ表示する
-        document.getElementById(tabId).style.display = 'block';
-
-        // 3. すべてのボタンから 'active' クラスを外す
-        const buttons = document.querySelectorAll('.tab-btn');
-        buttons.forEach(btn => {
-            btn.classList.remove('active');
-        });
-
-        // 4. クリックされたボタンにだけ 'active' クラスをつける
-        // (event.currentTarget はクリックされた要素自身を指します)
-        event.currentTarget.classList.add('active');
-    }
-
-    // ボタンクリック
-    menuBtn.addEventListener('click', toggleMenu);
-
-    // リンクをクリックしたら閉じる
-    navLinks.forEach(link => {
-        link.addEventListener('click', toggleMenu);
-    });
-
-    // ★追加：メニューの背景（画面全体）をクリックしても閉じるようにする
-    mobileNav.addEventListener('click', (e) => {
-        if (e.target === mobileNav) { // 背景部分をタップした時だけ
-            toggleMenu();
-        }
-    });
+}
 </script>
 </body>
 </html>

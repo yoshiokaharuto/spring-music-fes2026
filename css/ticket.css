@@ -1,32 +1,22 @@
 @charset "UTF-8";
 
-.ticket-topfont{
-    text-align: center;
-    font-size: 30px;
-}
-
-.ticket-topfont h2{
-    margin-bottom: -30px;
-    font-size: 50px;
-}
-
 .ticket-pay{
     background-color: #71DCC4;
     padding: 10px 0 10px 0;
 }
 
 .SalesPeriod{
-    font-weight: bold;
     color: white;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
+    margin: 10px 0 20px 0;
 }
 
 table{
-    width: 40%;
+    width: 96%;
     margin: 0 auto;
     border-collapse: collapse;
-    text-align: centers;
+    text-align: center;
 }
 
 table, th, td{
@@ -38,75 +28,6 @@ table, th, td{
 td{
     text-align: center;
 }
-
-button{
-    background-color: #FF8E45;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.buttons{
-    text-align: center;
-    margin: 35px 0 30px 0;
-}
-
-.buttons a{
-    text-decoration: none;
-}
-
-button a{
-    text-decoration: none;
-    color: white;
-}
-
-.ticket-method{
-    text-align: center;
-    margin-top: 40px;
-    font-size: 40px;
-}
-
-img{
-    display: block;
-    width: 100px;
-}
-
-article{
-    width: 25%;
-    margin:  0 auto;
-    border: #000000 2px solid;
-    margin-bottom: 10px;
-}
-
-article h4{
-    display: flex;
-    font-size: 30px;
-    align-items: center;
-    height: 50px;
-    margin-left: 10px;  
-}
-
-article p{
-    margin-left: 20px;
-}
-
-.ticket-method-note{
-    margin-top: 20px;
-    display: flex;
-}
-
-.pay-font{
-    margin-left: 10px;
-}
-
-.ticket-all{
-    margin-bottom: 3rem;
-}
-
 
 .modal {
   position: fixed;
@@ -160,74 +81,136 @@ article p{
   letter-spacing: -0.02em;
 }
 
-.tiket-bay{
+button{
+    background-color: #FF8E45;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
     text-align: center;
+}
+
+.buttons{
+    text-align: center;
+    margin: 35px 0 30px 0;
+}
+
+.buttons a{
+    text-decoration: none;
+}
+
+button a{
+    text-decoration: none;
+    color: white;
+}
+
+.ticket-method{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 40px;
+}
+
+.pay-font{
+    margin-left: 10px;
+}
+
+.ticket-all{
     margin-bottom: 3rem;
 }
 
+article{
+    margin:  0 auto;
+    border: #000000 2px solid;
+    margin-bottom: 10px;
+}
 
-@media screen and (max-width: 1000px){
+article h4{
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    height: 50px;
+    margin-left: 10px;  
+}
 
-    table{
-        width: 70%;
+article p{
+    margin: 10px;
+}
+
+.ticket-method-note{
+    margin-top: 20px;
+    display: block;
+    align-items: center;
+}
+
+.ticket-method-note article img {
+    width: 60px; 
+    height: auto;
+    margin: 10px;
+}
+.ticket-method-note article {
+    margin-bottom: 20px;
+}
+
+/* ==========================================
+   4. レスポンシブ対応 (PC表示の調整)
+   ========================================== */
+
+/* PC用 (1280px以上) */
+@media (min-width: 1280px) {
+    body { overflow: hidden; } 
+    
+    main {
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: calc(100vh - 60px);
+        padding-top: 10px;
     }
+
+    .container{
+        min-width: 770px;
+    }
+
+    /* カスタムスクロールバー */
+    .container::-webkit-scrollbar { width: 8px; }
+    .container::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.3); }
+    .container::-webkit-scrollbar-thumb { background: rgba(0, 188, 212, 0.5); border-radius: 4px; }
 
     .SalesPeriod{
-        font-size: 18px;
-        padding: 0 10px;
+        font-size: 16px;
+        padding: 10px;
     }
 
-    .ticket-topfont{
-        font-size: 22px;
-    }
-
-    .ticket-topfont h2{
-        font-size: 36px;
-        margin-bottom: -15px;
-    }
-
-    .ticket-method-note{
-        display: block;
-        align-items: center;
+    table{
+        width: 90%;
     }
 
     article{
-        width: 70%;
+        width: 90%;
+        margin: 0 auto 20px auto;
+        padding: 10px;
     }
 
     article h4{
         font-size: 30px;
         align-items: center;
     }
-
     img{
-        width: 90px;
+        width: 60px;
+        margin: 10px;
     }
-
     .ticket-method{
         font-size: 30px;
     }
-
-    td{
-        padding: 20px;
-    }
-
-    .buttons{
-        h2{
-            font-size: 48px;
-        }
-
-        p{
-            font-size: 35px;
-        }
+    button{
+        padding: 15px 20px;
+        font-size: 25px;
     }
 
     .close{
-        font-size: 60px;
-    }
-    
-    button{
-        padding: 20px 30px;
-        font-size: 25px;
+        font-size: 30px;
     }
 }

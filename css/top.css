@@ -118,8 +118,33 @@ main {
     font-size: 13px; 
 }
 
+
+.goods-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.goods-card { 
+    text-align: center; 
+}
+
+.goods-img {
+    width: 100%;
+    height: auto;
+    background: #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.goods-name { 
+    font-size: 13px; 
+}
+
 /* ボタン類 */
 .view-more-btn {
+    text-align: center;
     display: block;
     width: 150px;
     margin: 20px auto 0;
@@ -154,7 +179,7 @@ main {
 
 /* タブレット用 */
 @media (min-width: 768px) {
-    .container { max-width: 765px; }
+    .container { max-width: 770px; }
     .artist-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
@@ -167,12 +192,12 @@ main {
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        min-height: calc(100vh - 70px);
+        min-height: calc(100vh - 30px);
         padding-top: 10px;
     }
 
     .container {
-        max-width: 765px;
+        min-width: 770px;
     }
 
     /* カスタムスクロールバー */

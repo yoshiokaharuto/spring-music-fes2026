@@ -111,3 +111,49 @@ label{
 .link:hover {
     opacity: 0.8;            /* ホバー時に少し薄く */
 }
+
+
+/* ------------------------------------------
+   レスポンシブ対応 (PC表示)
+   ------------------------------------------ */
+
+/* タブレット (768px以上) */
+@media (min-width: 768px) {
+
+  html{
+    scroll-padding-top: 160px;
+  }
+
+  .container{
+    min-width: 765px;
+  }
+}
+
+
+/* PC (1280px以上) */
+@media (min-width: 1280px) {
+  /* PCではcommon.cssによりbodyのスクロールが止まるため、
+     メインコンテナ(.bodercheck)内でスクロールさせる設定 */
+
+  main {
+     display: flex;
+     justify-content: center;
+     align-items: flex-start;
+     height: calc(100vh - 80px); /* 全体からヘッダー分を引く */
+     height: 100vh;
+     padding-top: 20px;
+     box-sizing: border-box;
+  }
+
+  /* PC時のスクロールバーカスタマイズ */
+  .bodercheck::-webkit-scrollbar {
+    width: 8px;
+  }
+  .bodercheck::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .bodercheck::-webkit-scrollbar-thumb {
+    background: rgba(0, 188, 212, 0.5);
+    border-radius: 4px;
+  }
+}

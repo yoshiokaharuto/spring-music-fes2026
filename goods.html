@@ -3,59 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/goods.css">
-  <title>グッズ情報</title>
+  <link rel="icon" href="./images/spring_logo.png">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/goods.css">
+  <title>グッズ情報 - Spring Music Festival</title>
 </head>
 <body>
-    <h1 class="MAPTOP">GOODS</h1>  
-        <h1 class="MAPSUB">グッズ紹介</h1>
-  <div class="goods-list">
-      <div class="goods-item">
-        <img src="images/t-shirt.webp" alt="オフィシャルTシャツ">
-        <div class="goods-pay">
-          <h3>オフィシャルTシャツ（S/M/L/XL）</h3>
-          <p>価格：3500円（税込）</p>
+  <header>
+        <div class="header-content">
+            <div class="logo-text">
+                <a href="./index.html">
+                    <span>SPRING MUSIC</span><br>
+                    <span>FESTIVAL 2026</span>
+                </a>
+            </div>
+            <nav class="desktop-nav">
+                <a href="./artists/index.html">アーティスト</a>
+                <a href="./timetable.html">タイムテーブル</a>
+                <a href="./access.html">会場案内</a>
+                <a href="./goods.html">グッズ</a>
+                <a href="./ticket.html">チケット情報</a>
+                <a href="./faq.html">よくある質問</a>
+                <a href="./contact.html">お問い合わせ</a>
+            </nav>
+            <div class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        <p>今回のライブを記念するオフィシャルTシャツ<br>デザイン性はもちろん、日常でも着用しやすい仕上がりです。</p>
-      </div>
+    </header>
 
-      <div class="goods-item">
-        <img src="images/towel.webp" alt="タオル">
-        <div class="goods-pay">
-            <h3>タオル</h3>
-            <p>価格：2000円（税込）</p>
-        </div>
-        <p>ライブの熱気を一緒に盛り上げる定番アイテム<br>普段使いにもおすすめです。</p>
-      </div>
+    <nav class="mobile-nav-overlay" id="mobileNav">
+        <ul>
+            <li><a href="./artists/index.html">アーティスト</a></li>
+            <li><a href="./timetable.html">タイムテーブル</a></li>
+            <li><a href="./access.html">会場案内</a></li>
+            <li><a href="./goods.html">グッズ</a></li>
+            <li><a href="./faq.html">よくある質問</a></li>
+            <li><a href="./ticket.html">チケット情報</a></li>
+            <li><a href="./contact.html">お問い合わせ</a></li>
+        </ul>
+    </nav>
 
-      <div class="goods-item">
-        <img src="images/sticker.webp" alt="ステッカーセット">
-        <div class="goods-pay">
-            <h3>ステッカーセット</h3>
-            <p>価格：800円（税込）</p>
+    <main>
+      <div class="container">
+        <div class="title-section">
+          <h1>GOODS</h1>
+          <p>グッズ</p>
         </div>
-        <p>数種類のデザインがセットになったステッカー<br>ノートやPCなど、自由に貼って楽しめます。</p>
-      </div>
+        <div class="goods-list">
+            <div class="goods-item">
+              <img src="images/t-shirt.webp" alt="オフィシャルTシャツ">
+              <div class="goods-pay">
+                <h3>オフィシャルTシャツ（S/M/L/XL）</h3>
+                <p>価格：3500円（税込）</p>
+              </div>
+              <p>今回のライブを記念するオフィシャルTシャツ<br>デザイン性はもちろん、日常でも着用しやすい仕上がりです。</p>
+            </div>
 
-      <div class="goods-item">
-        <img src="images/brochure.webp" alt="パンフレット">
-        <div class="goods-pay">
-            <h3>パンフレット</h3>
-            <p>価格：1000円（税込）</p>
-        </div>
-        <p>ライブのすべてがわかる一冊<br>記念にもおすすめです。</p>
-      </div>
+            <div class="goods-item">
+              <img src="images/towel.webp" alt="タオル">
+              <div class="goods-pay">
+                  <h3>タオル</h3>
+                  <p>価格：2000円（税込）</p>
+              </div>
+              <p>ライブの熱気を一緒に盛り上げる定番アイテム<br>普段使いにもおすすめです。</p>
+            </div>
 
-      <div class="goods-item">
-        <img src="images/bag.webp" alt="トートバッグ">
-        <div class="goods-pay">
-            <h3>トートバッグ</h3>
-            <p>価格：2500円（税込）</p>
-        </div>
-        <p>しっかりした素材で使いやすいトートバッグ<br>ライブ当日はもちろん、日常でも活躍します。</p>
+            <div class="goods-item">
+              <img src="images/sticker.webp" alt="ステッカーセット">
+              <div class="goods-pay">
+                  <h3>ステッカーセット</h3>
+                  <p>価格：800円（税込）</p>
+              </div>
+              <p>数種類のデザインがセットになったステッカー<br>ノートやPCなど、自由に貼って楽しめます。</p>
+            </div>
+
+            <div class="goods-item">
+              <img src="images/brochure.webp" alt="パンフレット">
+              <div class="goods-pay">
+                  <h3>パンフレット</h3>
+                  <p>価格：1000円（税込）</p>
+              </div>
+              <p>ライブのすべてがわかる一冊<br>記念にもおすすめです。</p>
+            </div>
+
+            <div class="goods-item">
+              <img src="images/bag.webp" alt="トートバッグ">
+              <div class="goods-pay">
+                  <h3>トートバッグ</h3>
+                  <p>価格：2500円（税込）</p>
+              </div>
+              <p>しっかりした素材で使いやすいトートバッグ<br>ライブ当日はもちろん、日常でも活躍します。</p>
+            </div>
+          </div>
+          <p class="Note">※グッズは当日、会場での販売となります。</p>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="./index.html">HOME</a>
+                    <a href="./artists/index.html">アーティスト</a>
+                    <a href="./timetable.html">タイムテーブル</a>
+                    <a href="./access.html">会場案内</a>
+                    <a href="./goods.html">グッズ</a>
+                    <a href="./ticket.html">チケット情報</a>
+                    <a href="./faq.html">よくある質問</a>
+                    <a href="./privacy.html">プライバシーポリシー</a>
+                    <a href="./contact.html">お問い合わせ</a>
+                </div>
+                <div>
+                    <div style="font-size: 14px; margin-bottom: 10px;">Map</div>
+                    <div class="footer-map"></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                SPRING MUSIC FESTIVAL
+            </div>
+        </footer>
       </div>
-    </div>
-    <p class="Note">※グッズは当日、会場での販売となります。</p>
+    </main>
+
+<script src="./js/menu.js"></script>
 </body>
 </html>
 

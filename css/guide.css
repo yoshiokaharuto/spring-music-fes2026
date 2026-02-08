@@ -1,103 +1,247 @@
-html {
-  box-sizing: border-box;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+@charset "UTF-8";
+
+html{
+    scroll-padding-top: 80px;
 }
 
-body {
-  margin: 0;
-  line-height: 1.7;
-  color: #333;
+#BelongingsList,
+#Precautions,
+#rainy,
+#OtherNotes,
+#manners,
+#inquiry {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-
-h1 {
+h2 {
+  color: #00bcd4;
+  font-size: 20px;
+  font-weight: bold;
   text-align: center;
-  letter-spacing: 1px;
-  margin-top: 20px;
+  margin-top: 0;
+  margin-bottom: 25px;
+  border-bottom: none; /* デフォルトの線を消す */
 }
 
+/* 見出し H3 (小見出し) */
+h3 {
+  font-size: 16px;
+  color: #333;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  border-left: 4px solid #ff6b35; /* 左側にオレンジの線 */
+  border-bottom: 1px solid #eee; /* 下に薄い線 */
+  padding-bottom: 5px;
+}
 
-.bodercheck h2{
-  margin-top: 40px;
-  font-size: 18px;
-  border-bottom: 2px solid #ff7a3c;
-  padding-bottom: 6px;
+/* 最初のh3のマージン調整 */
+h3:first-of-type {
+  margin-top: 10px;
 }
 
 p {
-  margin: 10px 0;
-}
-
-iframe {
-  width: 100%;
-  height: 300px;
-  border-radius: 8px;
-  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 15px;
 }
 
 ul {
   padding-left: 20px;
-  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 li {
+  font-size: 14px;
+  line-height: 1.6;
   margin-bottom: 8px;
+  color: #333;
+  list-style-type: disc;
 }
 
-.MAPTOP {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: -5px;
-  font-size: 40px;
-  
+/* 強調文字 */
+strong {
+  color: #ff6b35;
+  background: rgba(255, 107, 53, 0.1);
+  padding: 0 4px;
 }
 
-.MAPSUB {
-  text-align: center;
-  margin-top: -10px;
-  font-size: 24px;
-  color: #555;
-}
-
-.place {
-  margin: 0 auto;
-}
-
-.map {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
+#rainy a {
   display: block;
-  margin: 20px auto 40px;
-  border-radius: 8px;
+  color: #00bcd4;
+  text-decoration: underline;
+  margin-bottom: 5px;
+  font-size: 14px;
 }
 
-.LastTitle{
+#rainy a:hover {
+  text-decoration: none;
+  color: #ff6b35;
+}
+
+#inquiry h3 {
+  border: none;
   text-align: center;
-  margin-top: 40px;
-  font-size: 20px;
+  font-size: 15px;
+  padding: 0;
+  margin-bottom: 20px;
 }
 
-.LastTitle h2{
+#inquiry ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+#inquiry li {
+  margin-bottom: 10px;
+}
+
+.LastTitle {
+  text-align: center;
+  margin: 40px 0 60px;
+  color: #333;
+}
+
+.LastTitle h2 {
   font-size: 18px;
+  color: #ff6b35;
+  line-height: 1.6;
+  text-shadow: 1px 1px 0px white;
 }
 
-.PDF{
-  text-align: center;
+/* ==========================================
+   ページ内リンクメニュー (#PageMenu)
+   ========================================== */
+#PageMenu {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (max-width: 480px) {
+/* MENUタイトル */
+#PageMenu .menu-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 2px solid #666; /* タイトルの下の少し太い線 */
+  padding-bottom: 8px;
+  margin-bottom: 0;
+}
 
-  body{
-    padding: 0 10px;
-  }
-  h1 {
-    font-size: 22px;
+/* リスト全体のスタイル */
+#PageMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 各項目のスタイル */
+#PageMenu li {
+  margin: 0;
+  border-bottom: 1px solid #ddd; /* 各項目の下の細い線 */
+  list-style-type: none; /* 点を消す */
+}
+
+/* 最後の項目だけ線を消す */
+#PageMenu li:last-child {
+  border-bottom: none;
+}
+
+/* リンクのスタイル */
+#PageMenu a {
+  display: block;      /* 枠いっぱいをクリック可能にする */
+  padding: 12px 5px;   /* 上下の余白 */
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s;
+  position: relative;
+}
+
+/* 右側に矢印を出す（アクセント） */
+#PageMenu a::after {
+  content: '›';
+  position: absolute;
+  right: 5px;
+  color: #999;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+/* マウスを乗せた時の動き */
+#PageMenu a:hover {
+  color: #ff6b35; /* テーマカラーのオレンジ */
+  padding-left: 10px; /* 少し右に動く */
+  background-color: #f9f9f9;
+}
+
+#PageMenu a:hover::after {
+  color: #ff6b35;
+}
+
+
+/* ------------------------------------------
+   レスポンシブ対応 (PC表示)
+   ------------------------------------------ */
+
+/* タブレット (768px以上) */
+@media (min-width: 768px) {
+
+  html{
+    scroll-padding-top: 160px;
   }
 
-  iframe {
-    height: 240px;
+  .container{
+    min-width: 765px;
+  }
+}
+
+
+/* PC (1280px以上) */
+@media (min-width: 1280px) {
+  /* PCではcommon.cssによりbodyのスクロールが止まるため、
+     メインコンテナ(.bodercheck)内でスクロールさせる設定 */
+
+  main {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: calc(100vh - 80px); /* 全体からヘッダー分を引く */
+    height: 100vh;
+    padding-top: 10px;
+    box-sizing: border-box;
+  }
+
+  /* PC時のスクロールバーカスタマイズ */
+  .bodercheck::-webkit-scrollbar {
+    width: 8px;
+  }
+  .bodercheck::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .bodercheck::-webkit-scrollbar-thumb {
+    background: rgba(0, 188, 212, 0.5);
+    border-radius: 4px;
+  }
+  
+  /* PCでのセクションマージン調整 */
+  #BelongingsList,
+  #Precautions,
+  #rainy,
+  #OtherNotes,
+  #manners,
+  #inquiry {
+    margin-bottom: 10px;
+    scroll-margin-top: 150px;
   }
 }

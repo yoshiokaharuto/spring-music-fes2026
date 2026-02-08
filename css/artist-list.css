@@ -71,7 +71,7 @@
     }
 
     .container{
-        max-width: 770px;
+        min-width: 770px;
     }
 
     /* カスタムスクロールバー */

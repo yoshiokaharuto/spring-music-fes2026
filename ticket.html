@@ -1,116 +1,163 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/ticket.css">
-  <title>チケット情報</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>チケット情報 - Spring Music Festival</title>
+  <link rel="icon" href="./images/spring_logo.png">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/ticket.css">
 </head>
 
 <body>
-  <section>
-    <div class="ticket-topfont">
-      <h2>TICKET INFO</h2>
-      <p>チケット情報</p>
-    </div>
+  <header>
+        <div class="header-content">
+            <div class="logo-text">
+                <a href="./index.html">
+                    <span>SPRING MUSIC</span><br>
+                    <span>FESTIVAL 2026</span>
+                </a>
+            </div>
+            <nav class="desktop-nav">
+                <a href="./artists/index.html">アーティスト</a>
+                <a href="./timetable.html">タイムテーブル</a>
+                <a href="./access.html">会場案内</a>
+                <a href="./goods.html">グッズ</a>
+                <a href="./ticket.html">チケット情報</a>
+                <a href="./faq.html">よくある質問</a>
+                <a href="./contact.html">お問い合わせ</a>
+            </nav>
+            <div class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
 
-    <div class="ticket-pay">
-      <p class="SalesPeriod">販売期間: 2026年3月1日～4月25日(または完売まで)</p>
-      <table>
-        <thead>
-          <tr>
-            <th>種別</th>
-            <th>料金</th>
-            <th>内容</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>一日券(5/2)</td>
-            <td>¥8,000</td>
-            <td>5月2日のみ入場可</td>
-          </tr>
-          <tr>
-            <td>一日券(5/3)</td>
-            <td>¥8,000</td>
-            <td>5月3日のみ入場可</td>
-          </tr>
-          <tr>
-            <td>2日通し券</td>
-            <td>¥14,000</td>
-            <td>両日入場可<br><small>(¥2,000お得)</small></td>
-          </tr>
-          <tr>
-            <td>VIP券(2日通し)</td>
-            <td>¥25,000</td>
-            <td>専用エリア、グッズ付き</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="buttons">
-        <button><a href="#modal">チケットに関する注意事項</a></button>
-        <div class="modal" id="modal">
-        <div class="modal-wrapper">
-        <a href="#" class="close">✕</a>
-        <div class="modal-content">
-        <h2>チケットに関して</h2>
-        <p>チケット１枚につき、１名様のみご入場いただけます（小学生以下は保護者同伴で無料。）</p>
-        <p>お子様への使用目的以外で、会場内にベビーカーを持ち込むことができません。</p>
-        <p>保護者の方は係員の指示に従い、お子様から決して目を離さないようご配慮ください</p>
-        <p>１枚のチケットを１名以上の複数のお客様で使用することは出来ません。</p>
-      </div>
-  </div>
-</div>
-      </div>
-    </div>
-  </section>
+    <nav class="mobile-nav-overlay" id="mobileNav">
+        <ul>
+            <li><a href="./artists/index.html">アーティスト</a></li>
+            <li><a href="./timetable.html">タイムテーブル</a></li>
+            <li><a href="./access.html">会場案内</a></li>
+            <li><a href="./goods.html">グッズ</a></li>
+            <li><a href="./faq.html">よくある質問</a></li>
+            <li><a href="./ticket.html">チケット情報</a></li>
+            <li><a href="./contact.html">お問い合わせ</a></li>
+        </ul>
+    </nav>
 
-  <div>
-    <div class="ticket-all">
-      <h2 class="ticket-method">チケット購入方法</h2>
+  <main>
+    <div class="container">
+      <div class="title-section">
+        <h1>TICKET INFO</h1>
+        <p>チケット情報</p>
+      </div>
+
+      <div class="ticket-pay">
+        <p class="SalesPeriod">販売期間: 2026年3月1日～4月25日(または完売まで)</p>
+        <table>
+            <thead>
+              <tr>
+                <th>種別</th>
+                <th>料金</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>一日券(5/2)</td>
+                <td>¥8,000</td>
+                <td>5月2日のみ入場可</td>
+              </tr>
+              <tr>
+                <td>一日券(5/3)</td>
+                <td>¥8,000</td>
+                <td>5月3日のみ入場可</td>
+              </tr>
+              <tr>
+                <td>2日通し券</td>
+                <td>¥14,000</td>
+                <td>両日入場可<br><small>(¥2,000お得)</small></td>
+              </tr>
+              <tr>
+                <td>VIP券(2日通し)</td>
+                <td>¥25,000</td>
+                <td>専用エリア、グッズ付き</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="buttons">
+            <button><a href="#modal">チケットに関する注意事項</a></button>
+            <div class="modal" id="modal">
+              <div class="modal-wrapper">
+                <a href="#" class="close">✕</a>
+                <div class="modal-content">
+                  <h2>チケットに関して</h2>
+                  <p>チケット１枚につき、１名様のみご入場いただけます（小学生以下は保護者同伴で無料。）</p>
+                  <p>お子様への使用目的以外で、会場内にベビーカーを持ち込むことができません。</p>
+                  <p>保護者の方は係員の指示に従い、お子様から決して目を離さないようご配慮ください</p>
+                  <p>１枚のチケットを１名以上の複数のお客様で使用することは出来ません。</p>
+                </div>
+              </div>
+            </div>
+          </div> 
+      </div>
+
+      <div class="ticket-all">
+        <h2 class="ticket-method">チケット購入方法</h2>
+      </div>
 
       <div class="ticket-method-note">
-      <article>
-        <h4>
-          <img src="https://eplus.jp/s/eplus/img/favicon.ico">
+        <article>
+          <img src="./images/e_plus.png">
           <div class="pay-font">イープラス</div>
-        </h4>
-        <hr>
-        <p>全券種取扱い</p>
-        <p>PC・スマートフォン共通</p>
-      </article>
-
-
-
-
-      <article>
-        <h4>
-          <img src="https://image.pia.jp/common2/images/facebook_noimage.jpg">
+          <hr>
+          <p>全券種取扱い</p>
+          <p>PC・スマートフォン共通</p>
+        </article>
+        <article>
+          <img src="./images/pia.png">
           <div class="pay-font">チケットぴあ</div>
-        </h4>
-        <hr>
-        <p>全券種取扱い</p>
-        <p>PC・スマートフォン共通</p>
-      </article>
-
-
-      <article>
-        <h4>
-          <img src="https://partner.jal.co.jp/image.jsp?emile/shop/015410_i.jpg">
-          <div class="pay-font">楽天チケット</div>
-        </h4>
-        <hr>
-        <p>全券種取扱い</p>
-        <p>PC・スマートフォン共通</p>
-      </article>
+          <hr>
+          <p>全券種取扱い</p>
+          <p>PC・スマートフォン共通</p>
+        </article>
+        <article>
+              <img src="./images/rakuten.jpg">
+              <div class="pay-font">楽天チケット</div>
+              <hr>
+              <p>全券種取扱い</p>
+              <p>PC・スマートフォン共通</p>
+          </article>
       </div>
+
+
+      <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="./index.html">HOME</a>
+                    <a href="./artists/index.html">アーティスト</a>
+                    <a href="./timetable.html">タイムテーブル</a>
+                    <a href="./access.html">会場案内</a>
+                    <a href="./goods.html">グッズ</a>
+                    <a href="./ticket.html">チケット情報</a>
+                    <a href="./faq.html">よくある質問</a>
+                    <a href="./privacy.html">プライバシーポリシー</a>
+                    <a href="./contact.html">お問い合わせ</a>
+                </div>
+                <div>
+                    <div style="font-size: 14px; margin-bottom: 10px;">Map</div>
+                    <div class="footer-map"></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                SPRING MUSIC FESTIVAL
+            </div>
+        </footer>
     </div>
-  </section>
+  </main>
 
-  <div class="tiket-bay">
-    <button><a href="#">チケット購入はこちら</a></button>
-  </div>
-
+<script src="./js/menu.js"></script>
 </body>
-
 </html>

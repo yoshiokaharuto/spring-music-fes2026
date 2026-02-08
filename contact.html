@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spring Music Festival - お問い合わせ</title>
+    <title>お問い合わせ - Spring Music Festival</title>
+    <link rel="icon" href="./images/spring_logo.png">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/contact.css">
 </head>
@@ -11,8 +12,10 @@
     <header>
         <div class="header-content">
             <div class="logo-text">
-                SPRING MUSIC<br>
-                <span>FESTIVAL 2026</span>
+                <a href="./index.html">
+                    <span>SPRING MUSIC</span><br>
+                    <span>FESTIVAL 2026</span>
+                </a>
             </div>
             <nav class="desktop-nav">
                 <a href="./artists/index.html">アーティスト</a>
@@ -20,6 +23,7 @@
                 <a href="./access.html">会場案内</a>
                 <a href="./goods.html">グッズ</a>
                 <a href="./ticket.html">チケット情報</a>
+                <a href="./faq.html">よくある質問</a>
                 <a href="./contact.html">お問い合わせ</a>
             </nav>
             <div class="menu-btn" id="menuBtn">
@@ -36,6 +40,7 @@
             <li><a href="./timetable.html">タイムテーブル</a></li>
             <li><a href="./access.html">会場案内</a></li>
             <li><a href="./goods.html">グッズ</a></li>
+            <li><a href="./faq.html">よくある質問</a></li>
             <li><a href="./ticket.html">チケット情報</a></li>
             <li><a href="./contact.html">お問い合わせ</a></li>
         </ul>
@@ -45,7 +50,7 @@
         <div class="container">
             <div class="title-section">
                 <h1>CONTACT</h1>
-            <p>お問い合わせ</p>
+                <p>お問い合わせ</p>
         </div>
         <p>
             お問い合わせ内容を選択の上「確認画面へ」<br>
@@ -84,8 +89,14 @@
             <footer>
                 <div class="footer-content">
                     <div class="footer-links">
-                        <a href="./index.html">HOME</a><br>
-                        <a href="./privacy.html">プライバシーポリシー</a><br>
+                        <a href="./index.html">HOME</a>
+                        <a href="./artists/index.html">アーティスト</a>
+                        <a href="./timetable.html">タイムテーブル</a>
+                        <a href="./access.html">会場案内</a>
+                        <a href="./goods.html">グッズ</a>
+                        <a href="./ticket.html">チケット情報</a>
+                        <a href="./faq.html">よくある質問</a>
+                        <a href="./privacy.html">プライバシーポリシー</a>
                         <a href="./contact.html">お問い合わせ</a>
                     </div>
                     <div>
@@ -100,38 +111,6 @@
         </div>
     </main>
 
-<script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    const navLinks = document.querySelectorAll('.mobile-nav-overlay a');
-
-    // メニューの開閉を切り替える関数
-    function toggleMenu() {
-        menuBtn.classList.toggle('active');
-        mobileNav.classList.toggle('active');
-        
-        // メニューが開いている時は背面をスクロールさせない
-        if (mobileNav.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-    }
-
-    // ボタンクリック
-    menuBtn.addEventListener('click', toggleMenu);
-
-    // リンクをクリックしたら閉じる
-    navLinks.forEach(link => {
-        link.addEventListener('click', toggleMenu);
-    });
-
-    // ★追加：メニューの背景（画面全体）をクリックしても閉じるようにする
-    mobileNav.addEventListener('click', (e) => {
-        if (e.target === mobileNav) { // 背景部分をタップした時だけ
-            toggleMenu();
-        }
-    });
-</script>
+<script src="./js/menu.js"></script>
 </body>
 </html>

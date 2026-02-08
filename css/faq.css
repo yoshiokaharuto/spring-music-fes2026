@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+
+.menu-title {
+    border-bottom: 2px solid #333;
+    display: inline-block;
+    width: 100%;
+    font-weight: bold;
+}
+
+.list-group-item {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    font-size: 0.9rem;
+}
+
+/* セクションを白いボックスに */
+.faq-section, #PageMenu {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 質問（ボタン）のスタイル */
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 15px 10px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+}
+
+/* 開閉用の矢印 */
+.faq-question::after {
+    content: '＋';
+    position: absolute;
+    right: 10px;
+    color: #00bcd4;
+}
+
+.faq-question.active {
+    color: #ff6b35;
+    border-bottom: none;
+}
+
+.faq-question.active::after {
+    content: '－';
+}
+
+/* 回答のスタイル（最初は隠す） */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #fff9f7;
+    border-radius: 0 0 8px 8px;
+}
+
+.faq-answer p {
+    padding: 15px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* guide.cssから引き継ぐ共通パーツ（h2, h3など）はそのまま流用 */
+
+
+/* ------------------------------------------
+   レスポンシブ対応 (PC表示)
+   ------------------------------------------ */
+
+/* タブレット (768px以上) */
+@media (min-width: 768px) {
+
+  html{
+    scroll-padding-top: 160px;
+  }
+
+  .container{
+    min-width: 765px;
+  }
+}
+
+
+/* PC (1280px以上) */
+@media (min-width: 1280px) {
+  /* PCではcommon.cssによりbodyのスクロールが止まるため、
+     メインコンテナ(.bodercheck)内でスクロールさせる設定 */
+
+  main {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: calc(100vh - 80px); /* 全体からヘッダー分を引く */
+    height: 100vh;
+    padding-top: 10px;
+    box-sizing: border-box;
+  }
+
+  /* PC時のスクロールバーカスタマイズ */
+  .bodercheck::-webkit-scrollbar {
+    width: 8px;
+  }
+  .bodercheck::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .bodercheck::-webkit-scrollbar-thumb {
+    background: rgba(0, 188, 212, 0.5);
+    border-radius: 4px;
+  }
+}

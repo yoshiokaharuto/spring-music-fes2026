@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spring Music Festival 2026</title>
+  <link rel="icon" href="./images/spring_logo.png">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/top.css">
 </head>
@@ -11,8 +12,10 @@
     <header>
         <div class="header-content">
             <div class="logo-text">
-                <span>SPRING MUSIC</span><br>
-                <span>FESTIVAL 2026</span>
+                <a href="./index.html">
+                    <span>SPRING MUSIC</span><br>
+                    <span>FESTIVAL 2026</span>
+                </a>
             </div>
             <nav class="desktop-nav">
                 <a href="./artists/index.html">アーティスト</a>
@@ -20,6 +23,7 @@
                 <a href="./access.html">会場案内</a>
                 <a href="./goods.html">グッズ</a>
                 <a href="./ticket.html">チケット情報</a>
+                <a href="./faq.html">よくある質問</a>
                 <a href="./contact.html">お問い合わせ</a>
             </nav>
             <div class="menu-btn" id="menuBtn">
@@ -36,6 +40,7 @@
             <li><a href="./timetable.html">タイムテーブル</a></li>
             <li><a href="./access.html">会場案内</a></li>
             <li><a href="./goods.html">グッズ</a></li>
+            <li><a href="./faq.html">よくある質問</a></li>
             <li><a href="./ticket.html">チケット情報</a></li>
             <li><a href="./contact.html">お問い合わせ</a></li>
         </ul>
@@ -101,12 +106,22 @@
                         <div class="artist-name">宮本サクラ</div>
                     </div>
                 </div>
-              <button class="view-more-btn">VIEW MORE</button>
+              <a href="./artists/index.html" class="view-more-btn">VIEW MORE</a>
         </div>
 
         <div class="section">
-                <h2 class="section-title">GOODS</h2>
-                
+            <h2 class="section-title">GOODS</h2>
+            <div class="goods-grid">
+                <div class="goods-card">
+                    <img class="goods-img" src="./images/t-shirt.webp" alt="Tシャツ">
+                    <div class="goods-name">公式Tシャツ</div>
+                </div>
+                <div class="goods-card">
+                    <img class="goods-img" src="./images/towel.webp" alt="タオル">
+                    <div class="goods-name">タオル</div>
+                </div>
+            </div>
+            <a href="./goods/index.html" class="view-more-btn">VIEW MORE</a>
         </div>
 
         <a href="./ticket.html" class="ticket-btn">Ticket購入はこちら</a>
@@ -114,8 +129,14 @@
         <footer>
             <div class="footer-content">
                 <div class="footer-links">
-                    <a href="./index.html">HOME</a><br>
-                    <a href="./privacy.html">プライバシーポリシー</a><br>
+                    <a href="./index.html">HOME</a>
+                    <a href="./artists/index.html">アーティスト</a>
+                    <a href="./timetable.html">タイムテーブル</a>
+                    <a href="./access.html">会場案内</a>
+                    <a href="./goods.html">グッズ</a>
+                    <a href="./ticket.html">チケット情報</a>
+                    <a href="./faq.html">よくある質問</a>
+                    <a href="./privacy.html">プライバシーポリシー</a>
                     <a href="./contact.html">お問い合わせ</a>
                 </div>
                 <div>
@@ -126,41 +147,9 @@
             <div class="footer-bottom">
                 SPRING MUSIC FESTIVAL
             </div>
-    </footer>
+        </footer>
     </main>
 
-<script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    const navLinks = document.querySelectorAll('.mobile-nav-overlay a');
-
-    // メニューの開閉を切り替える関数
-    function toggleMenu() {
-        menuBtn.classList.toggle('active');
-        mobileNav.classList.toggle('active');
-        
-        // メニューが開いている時は背面をスクロールさせない
-        if (mobileNav.classList.contains('active')) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-    }
-
-    // ボタンクリック
-    menuBtn.addEventListener('click', toggleMenu);
-
-    // リンクをクリックしたら閉じる
-    navLinks.forEach(link => {
-        link.addEventListener('click', toggleMenu);
-    });
-
-    // ★追加：メニューの背景（画面全体）をクリックしても閉じるようにする
-    mobileNav.addEventListener('click', (e) => {
-        if (e.target === mobileNav) { // 背景部分をタップした時だけ
-            toggleMenu();
-        }
-    });
-</script>
+<script src="./js/menu.js"></script>
 </body>
 </html>
