@@ -64,6 +64,32 @@ li {
 
 .PDF{
   text-align: center;
+  display: block;
+  margin-top: 10px;
+  color: #ff7a3c;
+  text-decoration: none;
+  align-items: center;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.PDF:hover{
+  text-decoration: underline;
+  cursor: pointer;
+  transform: translateY(-2px); /* 軽く浮き上がる演出 */
+}
+
+.link-button {
+  display: inline-block;
+  align-items: center;
+  margin: 15px auto 0 auto;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #00bccd;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 15px;
 }
 
 @media screen and (max-width: 480px) {

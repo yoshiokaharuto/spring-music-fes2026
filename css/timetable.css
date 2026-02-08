@@ -55,14 +55,35 @@
     margin: 0 auto 20px;
 }
 
+.link{
+    display: block;
+    width: fit-content;
+    margin: 15px auto 20px;
+    padding: 10px 20px;
+    background-color: #00bcd4;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.link:hover {
+    background-color: #0097a7;
+
+}
+
 .timetable-img {
-    width: 100%;
+    width: 80%;
     display: block;
     height: auto;
+    margin: 0 auto;
 }
 
 .timetable-notes {
-    text-align: center;
+    width: 80%;
+    text-align: left;
+    margin: 0 auto 40px;
     font-size: 1rem;
     color: #666;
     line-height: 1.6;
