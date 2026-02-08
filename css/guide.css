@@ -4,6 +4,10 @@ html{
     scroll-padding-top: 80px;
 }
 
+p{
+  text-align: center;
+}
+
 #BelongingsList,
 #Precautions,
 #rainy,
@@ -115,6 +119,11 @@ strong {
   text-shadow: 1px 1px 0px white;
 }
 
+.contact li{
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
 /* ==========================================
    ページ内リンクメニュー (#PageMenu)
    ========================================== */
