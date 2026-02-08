@@ -62,14 +62,25 @@
             <div id="day1" class="timetable-content">
                 <img src="./images/0502_timetable.png" alt="05/02 タイムテーブル" class="timetable-img">
             </div>
+
             <div id="day2" class="timetable-content" style="display: none;">
                 <img src="./images/0503_timetable.png" alt="05/03 タイムテーブル" class="timetable-img">
             </div>
         </div>
 
+        <a href="./images/timetable.pdf" class="link" download="timetable.pdf">
+            タイムテーブルのダウンロードはこちら
+        </a>
+
         <div class="timetable-notes">
-          <p>・出演アーティスト及び出演日程・タイムテーブルが変更となる場合がございます。</p>
-          <p>・出演者の変更・キャンセルに伴う払い戻しは行いませんので予めご了承下さい。</p>
+            <p>
+                ・出演アーティスト及び出演日程・タイムテーブルが
+                変更となる場合がございます。
+            </p>
+            <p>
+                ・出演者の変更・キャンセルに伴う払い戻しは
+                行いませんので予めご了承下さい。
+            </p>
         </div>
 
         <footer>
@@ -98,5 +109,30 @@
   </main>
 
 <script src="./js/menu.js"></script>
+<script>
+    function switchTab(day, event) {
+    // 1. 全てのコンテンツを非表示にする
+    const contents = document.querySelectorAll('.timetable-content');
+    contents.forEach(content => content.style.display = 'none');
+
+    // 2. 選択された日のコンテンツを表示する
+    document.getElementById(day).style.display = 'block';
+
+    // 3. ボタンのactiveクラスを付け替える
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+
+    // ★追加：ダウンロードリンクを切り替える
+    const downloadLink = document.getElementById('download-link');
+    if (day === 'day1') {
+        downloadLink.href = './images/0502_timetable.png';
+        downloadLink.download = '0502_timetable.png';
+    } else {
+        downloadLink.href = './images/0503_timetable.png';
+        downloadLink.download = '0503_timetable.png';
+    }
+}
+</script>
 </body>
 </html>
